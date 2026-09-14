@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-**Scope.** This MIT license covers the source code of this project only.
-
-It does **not** cover the Quranic text, translations, or grammatical
-annotation used as content (see `sources/` and the "Data sources & licenses"
-section of [README.md](./README.md)), which remain under their own original
-licenses (Tanzil Project, Quranic Arabic Corpus).
