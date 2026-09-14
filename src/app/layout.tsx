@@ -3,8 +3,8 @@ import { Geist, Geist_Mono, Amiri } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
-import { LangueProvider } from "@/components/LangueProvider";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { TransliterationProvider } from "@/components/TransliterationProvider";
 import BarreNavigation from "@/components/BarreNavigation";
 
 const geistSans = Geist({
@@ -25,7 +25,7 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "Yawasla Corpus — Proto",
+  title: "Yawasla Corpus",
   description: "Prototype de lecture verset par verset avec traduction au survol des mots.",
 };
 
@@ -37,10 +37,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-vh-100 d-flex flex-column">
         <ThemeProvider>
-          <LangueProvider>
+          <TransliterationProvider>
             {children}
             <BarreNavigation />
-          </LangueProvider>
+          </TransliterationProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,16 +1,20 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { LANGUES, useLangue } from "@/components/LangueProvider";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { LANGUES, langueDePathname, urlPourLangue } from "@/lib/locale";
 import type { Langue } from "@/data/types";
 
 const LIBELLE_LANGUE: Record<Langue, string> = { fr: "Français", en: "English", es: "Español" };
 const DELAI_FERMETURE_MS = 300;
 
 // Menu de langue qui s'ouvre au survol (+ clic, mobile first : pas de vrai
-// survol au doigt), sur le modèle de l'infobulle des mots.
+// survol au doigt), sur le modèle de l'infobulle des mots. Chaque option est
+// un lien vers l'URL équivalente dans cette langue (fr sans préfixe, /en, /es).
 export default function MenuLangue() {
-  const { langue, definirLangue } = useLangue();
+  const pathname = usePathname();
+  const langue = langueDePathname(pathname);
   const [ouvert, setOuvert] = useState(false);
   const fermeture = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -26,11 +30,6 @@ export default function MenuLangue() {
   function programmerFermeture() {
     annulerFermeture();
     fermeture.current = setTimeout(() => setOuvert(false), DELAI_FERMETURE_MS);
-  }
-
-  function choisir(nouvelleLangue: Langue) {
-    definirLangue(nouvelleLangue);
-    setOuvert(false);
   }
 
   return (
@@ -49,15 +48,15 @@ export default function MenuLangue() {
         <ul className="menu-langue__liste" role="menu">
           {LANGUES.map((option) => (
             <li key={option} role="none">
-              <button
-                type="button"
+              <Link
+                href={urlPourLangue(pathname, option)}
                 role="menuitemradio"
                 aria-checked={option === langue}
                 className={`menu-langue__option ${option === langue ? "menu-langue__option--actif" : ""}`}
-                onClick={() => choisir(option)}
+                onClick={() => setOuvert(false)}
               >
                 {LIBELLE_LANGUE[option]}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>

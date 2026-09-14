@@ -1,10 +1,7 @@
-"use client";
-
 import { titreSourate, type Sourate } from "@/data/summary";
-import { useLangue } from "@/components/LangueProvider";
+import type { Langue } from "@/data/types";
 
-export default function TitreSourate({ sourate }: { sourate: Sourate }) {
-  const { langue } = useLangue();
+export default function TitreSourate({ sourate, langue }: { sourate: Sourate; langue: Langue }) {
   return (
     <>
       <h1 className="titre-accueil text-center mb-4" dir="rtl" lang="ar">

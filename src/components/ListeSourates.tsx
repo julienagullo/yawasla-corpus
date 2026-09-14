@@ -1,18 +1,18 @@
-"use client";
-
 import Link from "next/link";
 import { padId, titreSourate, type Sourate } from "@/data/summary";
-import { useLangue } from "@/components/LangueProvider";
+import type { Langue } from "@/data/types";
+import { urlPourLangue } from "@/lib/locale";
 
-export default function ListeSourates({ sourates }: { sourates: Sourate[] }) {
-  const { langue } = useLangue();
-
+export default function ListeSourates({ sourates, langue }: { sourates: Sourate[]; langue: Langue }) {
   return (
     <ul className="list-unstyled">
       {sourates.map((sourate) =>
         sourate.disponible ? (
           <li key={sourate.id} className="mb-2">
-            <Link href={`/sourate/${padId(sourate.id)}/${sourate.slug}`} className="text-decoration-none text-body">
+            <Link
+              href={urlPourLangue(`/sourate/${padId(sourate.id)}/${sourate.slug}`, langue)}
+              className="sourate-lien text-decoration-none"
+            >
               <span className="text-muted me-2">{sourate.id}.</span>
               {titreSourate(sourate, langue)}
             </Link>

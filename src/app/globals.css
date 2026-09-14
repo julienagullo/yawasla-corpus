@@ -58,11 +58,38 @@ body {
   line-height: 1;
   padding: 0.4rem 0.6rem;
   cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+.barre-navigation__bouton:hover {
+  color: var(--bs-success);
 }
 
 .barre-navigation__bouton--desactive {
   opacity: 0.3;
   pointer-events: none;
+}
+
+/* Switch translittération : icône + interrupteur iOS (Bootstrap form-switch),
+   alignés comme les autres boutons de la barre. La géométrie interne du
+   switch (padding/margin négatif) reste celle par défaut de Bootstrap. */
+.barre-navigation__switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.barre-navigation__switch .form-check-input {
+  cursor: pointer;
+}
+
+/* Vert au lieu du bleu Bootstrap par défaut quand le switch est activé. */
+.barre-navigation__switch .form-check-input:checked {
+  background-color: var(--bs-success);
+  border-color: var(--bs-success);
 }
 
 /* Menu de langue : s'ouvre vers le haut, la barre étant fixée en bas. */
@@ -95,6 +122,7 @@ body {
   padding: 0.4rem 0.9rem;
   cursor: pointer;
   color: var(--bs-secondary-color, #6c757d);
+  text-decoration: none;
 }
 
 .menu-langue__option:hover {
@@ -141,6 +169,16 @@ body {
 }
 
 .mot--actif {
+  color: var(--bs-success);
+}
+
+/* Lien vers une sourate dans le sommaire : même survol (vert) que les mots. */
+.sourate-lien {
+  color: var(--bs-body-color);
+  transition: color 0.2s ease-out;
+}
+
+.sourate-lien:hover {
   color: var(--bs-success);
 }
 

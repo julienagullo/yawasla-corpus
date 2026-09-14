@@ -13,7 +13,8 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "بِسْمِ",
-        traduction: { fr: "au nom de", en: "in the name of", es: "en el nombre de" },
+        transliteration: "Bismi",
+        traduction: { fr: "Au nom de", en: "In the name of", es: "En el nombre de" },
         grammaire: {
           fr: "préposition « bi » + nom commun (m.) sing.",
           en: "preposition « bi » + common noun (m.) sing.",
@@ -22,16 +23,19 @@ export const versets: Verset[] = [
       },
       {
         texte: "اللَّهِ",
+        transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
         grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },
       },
       {
         texte: "الرَّحْمَـٰنِ",
+        transliteration: "Ar-Rahmani",
         traduction: { fr: "le Tout Miséricordieux", en: "most benevolent", es: "el Clementísimo" },
         grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
       },
       {
         texte: "الرَّحِيمِ",
+        transliteration: "Ar-Rahimi",
         traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo" },
         grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
       },
@@ -47,7 +51,8 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "الْحَمْدُ",
-        traduction: { fr: "la louange", en: "all praise be", es: "la alabanza es" },
+        transliteration: "Al-Hamdu",
+        traduction: { fr: "La louange", en: "All praise be", es: "La alabanza es" },
         grammaire: {
           fr: "nom commun (m.) sing. déf.",
           en: "common noun (m.) sing. def.",
@@ -56,6 +61,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "لِلَّهِ",
+        transliteration: "Lillahi",
         traduction: { fr: "à Allah", en: "to Allah", es: "para Dios" },
         grammaire: {
           fr: "préposition « li » + nom propre (m.) sing.",
@@ -65,6 +71,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "رَبِّ",
+        transliteration: "Rabbi",
         traduction: { fr: "Seigneur de", en: "Lord of", es: "Señor de" },
         grammaire: {
           fr: "nom commun (m.) sing. (état construit)",
@@ -74,6 +81,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الْعَالَمِينَ",
+        transliteration: "Al-'Alamin",
         traduction: { fr: "l'univers", en: "all the worlds", es: "los mundos" },
         grammaire: {
           fr: "nom commun (m.) pluriel déf. (litt. « les mondes »)",
@@ -93,11 +101,13 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "الرَّحْمَـٰنِ",
-        traduction: { fr: "le Tout Miséricordieux", en: "Most beneficent", es: "el Clementísimo con toda la Creación" },
+        transliteration: "Ar-Rahmani",
+        traduction: { fr: "Le Tout Miséricordieux", en: "Most beneficent", es: "El Clementísimo con toda la Creación" },
         grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
       },
       {
         texte: "الرَّحِيمِ",
+        transliteration: "Ar-Rahimi",
         traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo con los creyentes" },
         grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
       },
@@ -113,6 +123,7 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "مَالِكِ",
+        transliteration: "Maliki",
         traduction: { fr: "Maître de", en: "King of", es: "Soberano de" },
         grammaire: {
           fr: "nom/participe actif (m.) sing. (état construit)",
@@ -122,6 +133,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "يَوْمِ",
+        transliteration: "Yawmi",
         traduction: { fr: "le Jour de", en: "the Day of", es: "el Día de" },
         grammaire: {
           fr: "nom commun (m.) sing. (état construit)",
@@ -131,6 +143,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الدِّينِ",
+        transliteration: "Ad-Din",
         traduction: { fr: "la rétribution", en: "Judgement", es: "la Recompensa" },
         grammaire: {
           fr: "nom commun (m.) sing. déf. (litt. « la religion/jugement »)",
@@ -150,6 +163,7 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "إِيَّاكَ",
+        transliteration: "Iyyaka",
         traduction: { fr: "C'est Toi [Seul] que", en: "You alone", es: "Solamente a Ti" },
         grammaire: {
           fr: "pronom personnel objet, 2e pers. m. sing.",
@@ -159,6 +173,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "نَعْبُدُ",
+        transliteration: "Na'budu",
         traduction: { fr: "nous adorons", en: "we worship", es: "adoramos" },
         grammaire: {
           fr: "verbe (v.) inaccompli, 1re pers. pluriel",
@@ -168,6 +183,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "وَإِيَّاكَ",
+        transliteration: "Wa iyyaka",
         traduction: { fr: "et c'est Toi [Seul] dont", en: "and to You alone", es: "y solamente a Ti" },
         grammaire: {
           fr: "conjonction « wa » + pronom personnel objet, 2e pers. m. sing.",
@@ -177,6 +193,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "نَسْتَعِينُ",
+        transliteration: "Nasta'in",
         traduction: { fr: "nous implorons secours", en: "turn for help", es: "pedimos ayuda" },
         grammaire: {
           fr: "verbe (v.) inaccompli, 1re pers. pluriel",
@@ -196,6 +213,7 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "اهْدِنَا",
+        transliteration: "Ihdina",
         traduction: { fr: "Guide-nous", en: "Guide us", es: "Guíanos" },
         grammaire: {
           fr: "verbe (v.) impératif, 2e pers. m. sing. + suffixe « nous »",
@@ -205,6 +223,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الصِّرَاطَ",
+        transliteration: "As-Sirata",
         traduction: { fr: "le chemin", en: "to the path", es: "al camino" },
         grammaire: {
           fr: "nom commun (m.) sing. déf., accusatif",
@@ -214,6 +233,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الْمُسْتَقِيمَ",
+        transliteration: "Al-Mustaqim",
         traduction: { fr: "droit", en: "that is straight", es: "recto" },
         grammaire: {
           fr: "participe actif/adjectif (m.) sing. déf., accusatif",
@@ -233,7 +253,8 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "صِرَاطَ",
-        traduction: { fr: "le chemin de", en: "the path of", es: "el camino de" },
+        transliteration: "Sirata",
+        traduction: { fr: "Le chemin de", en: "The path of", es: "El camino de" },
         grammaire: {
           fr: "nom commun (m.) sing. (état construit), accusatif",
           en: "common noun (m.) sing. (construct state), accusative",
@@ -242,6 +263,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الَّذِينَ",
+        transliteration: "Alladhina",
         traduction: { fr: "ceux que", en: "those whom", es: "aquellos a quienes" },
         grammaire: {
           fr: "pronom relatif (m.) pluriel",
@@ -251,6 +273,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "أَنْعَمْتَ",
+        transliteration: "An'amta",
         traduction: { fr: "Tu as comblés de faveurs", en: "You have blessed", es: "Tú has agraciado" },
         grammaire: {
           fr: "verbe (v.) accompli, 2e pers. m. sing. + suffixe « tu »",
@@ -260,6 +283,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "عَلَيْهِمْ",
+        transliteration: "'Alayhim",
         traduction: { fr: "envers eux", en: "upon them", es: "sobre ellos" },
         grammaire: {
           fr: "préposition + suffixe pronom, 3e pers. m. pluriel",
@@ -269,6 +293,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "غَيْرِ",
+        transliteration: "Ghayri",
         traduction: { fr: "non pas de", en: "not", es: "no" },
         grammaire: {
           fr: "nom commun (m.) sing. (état construit), génitif",
@@ -278,6 +303,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الْمَغْضُوبِ",
+        transliteration: "Al-Maghdubi",
         traduction: {
           fr: "ceux qui ont encouru la colère",
           en: "those who have earned wrath",
@@ -291,6 +317,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "عَلَيْهِمْ",
+        transliteration: "'Alayhim",
         traduction: { fr: "envers eux", en: "upon them", es: "sobre ellos" },
         grammaire: {
           fr: "préposition + suffixe pronom, 3e pers. m. pluriel",
@@ -300,6 +327,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "وَلَا",
+        transliteration: "Wa la",
         traduction: { fr: "ni", en: "nor", es: "ni" },
         grammaire: {
           fr: "conjonction « wa » + négation",
@@ -309,6 +337,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "الضَّالِّينَ",
+        transliteration: "Ad-Dallin",
         traduction: { fr: "des égarés", en: "those who have gone astray", es: "los extraviados" },
         grammaire: {
           fr: "participe actif (m.) pluriel déf., génitif",

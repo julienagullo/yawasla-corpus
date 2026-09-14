@@ -1,12 +1,7 @@
-"use client";
-
-import type { Verset } from "@/data/types";
-import { useLangue } from "@/components/LangueProvider";
+import type { Langue, Verset } from "@/data/types";
 import Mot from "@/components/Mot";
 
-export default function Versets({ versets }: { versets: Verset[] }) {
-  const { langue } = useLangue();
-
+export default function Versets({ versets, langue }: { versets: Verset[]; langue: Langue }) {
   return (
     <div className="versets">
       {versets.map((verset) => (

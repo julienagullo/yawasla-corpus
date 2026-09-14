@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useRef, useState, type ReactNode } from "react";
-import type { Mot as MotType } from "@/data/types";
-import { useLangue } from "@/components/LangueProvider";
+import type { Langue, Mot as MotType } from "@/data/types";
+import { useTransliteration } from "@/components/TransliterationProvider";
 
 const DELAI_FERMETURE_MS = 2000;
 const DUREE_FONDU_MS = 300;
@@ -29,12 +29,14 @@ export default function Infobulle({
   children,
   dir,
   lang,
+  langue,
 }: {
   children: ReactNode;
   dir?: string;
   lang?: string;
+  langue: Langue;
 }) {
-  const { langue } = useLangue();
+  const { afficher: afficherTransliteration } = useTransliteration();
   const conteneurRef = useRef<HTMLDivElement>(null);
   const [motActif, setMotActif] = useState<MotType | null>(null);
   const [position, setPosition] = useState<Position | null>(null);
@@ -92,6 +94,9 @@ export default function Infobulle({
               transform: "translate(-50%, calc(-100% - 8px))",
             }}
           >
+            {afficherTransliteration && (
+              <span className="mot-infobulle__grammaire d-block small fst-italic">{motActif.transliteration}</span>
+            )}
             <span className="d-block fw-semibold">{motActif.traduction[langue]}</span>
             <span className="mot-infobulle__grammaire d-block small mt-1">{motActif.grammaire[langue]}</span>
           </span>
