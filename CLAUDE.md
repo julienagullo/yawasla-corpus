@@ -84,14 +84,15 @@ Tout ce qui n'est pas listé dans « Concept » ci-dessus à ne pas développer 
 
 ## TODO
 
-- [ ] Définir le format de stockage de la source (texte, traductions FR/EN/ES, mot-à-mot)
-- [ ] Page d'accueil : liste des 114 sourates (dispo / grisées)
-- [ ] Page sourate : affichage verset par verset + traduction
-- [ ] Interaction au survol : infobulle traduction + grammaire par mot
-- [ ] Sélecteur de langue (FR / EN / ES)
-- [ ] Darkmode
+- [x] Définir le format de stockage de la source (texte, traductions FR/EN/ES, mot-à-mot)
+- [x] Page d'accueil : liste des 114 sourates (dispo / grisées)
+- [x] Page sourate : affichage verset par verset + traduction
+- [x] Interaction au survol : infobulle traduction + grammaire par mot
+- [x] Sélecteur de langue (FR / EN / ES)
+- [x] Darkmode
+- [x] Attribution Tanzil + Quranic Arabic Corpus visible sur le site (obligation de licence)
+- [ ] Intégration du contenu
 - [ ] Système de mot favori + page « dico personnel »
-- [ ] Attribution Tanzil + Quranic Arabic Corpus visible sur le site (obligation de licence)
 
 <!-- BEGIN:nextjs-agent-rules -->
 
