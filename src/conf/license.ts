@@ -1,9 +1,8 @@
 import type { Langue } from "@/conf/types";
 
-// Sources & remerciements affichés dans le popup "i" de la barre de
-// navigation (voir MenuInfo.tsx). Reprend les obligations de licence
-// décrites dans CLAUDE.md (attribution + lien obligatoires et visibles).
 export const RECITATEUR = "Cheikh Mahmoud Khalil Al-Hussary";
+
+export const GITHUB_URL = "https://github.com/julienagullo/yawasla-corpus";
 
 export type Source = {
   nom: string;

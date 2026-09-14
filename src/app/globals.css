@@ -247,6 +247,19 @@ body {
   color: var(--bs-success);
 }
 
+/* Au survol, le "(n)" cède la place à une icône play. */
+.numero-verset__icone {
+  display: none;
+}
+
+.numero-verset:hover .numero-verset__numero {
+  display: none;
+}
+
+.numero-verset:hover .numero-verset__icone {
+  display: inline;
+}
+
 .mot-infobulle {
   width: max-content;
   max-width: 220px; /* doit correspondre à LARGEUR_MAX_INFOBULLE dans Infobulle.tsx */

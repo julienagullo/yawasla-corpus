@@ -2,13 +2,11 @@
 
 import { useRef, useState } from "react";
 import { LIBELLES } from "@/conf/libelles";
-import { RECITATEUR, SOURCES } from "@/conf/license";
+import { RECITATEUR, SOURCES, GITHUB_URL } from "@/conf/license";
 import type { Langue } from "@/conf/types";
 
 const DELAI_FERMETURE_MS = 300;
 
-// Popup "i" : récitateur + sources, sur le même modèle survol/clic que
-// MenuLangue (mobile first : pas de vrai survol au doigt).
 export default function MenuInfo({ langue }: { langue: Langue }) {
   const libelles = LIBELLES[langue];
   const [ouvert, setOuvert] = useState(false);
@@ -58,6 +56,13 @@ export default function MenuInfo({ langue }: { langue: Langue }) {
               : {source.description[langue]}
             </p>
           ))}
+          <p className="menu-info__ligne">
+            <i className="bi bi-github" aria-hidden="true" />{" "}
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+              {libelles.codeSource}
+            </a>{" "}
+            ({libelles.licenceCode})
+          </p>
         </div>
       )}
     </div>

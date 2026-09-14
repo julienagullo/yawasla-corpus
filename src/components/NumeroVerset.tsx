@@ -40,7 +40,8 @@ export default function NumeroVerset({
       onMouseDown={(e) => e.preventDefault()}
       onClick={() => jouer(dossier, versets, numero)}
     >
-      ({numero})
+      <span className="numero-verset__numero">({numero})</span>
+      <i className="bi bi-play-fill numero-verset__icone" aria-hidden="true" />
     </button>
   );
 }

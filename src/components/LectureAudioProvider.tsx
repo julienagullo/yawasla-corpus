@@ -19,11 +19,6 @@ type LectureAudioContexte = {
 
 const LectureAudioContext = createContext<LectureAudioContexte | null>(null);
 
-// <audio> unique, monté ici (racine du layout) pour rester accessible à la
-// fois aux boutons play/pause/stop (BarreNavigation, hors de la page) et au
-// surlignage du mot en cours (Mot.tsx, dans la page) : deux branches
-// distinctes de l'arbre React qui ne peuvent pas se passer l'état autrement
-// que par un contexte commun monté au-dessus des deux.
 export function LectureAudioProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const versetsRef = useRef<Verset[]>([]);
@@ -46,23 +41,27 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
     descendreSiHorsChamp(verset.numero);
   }
 
-  // Fait défiler vers le bas uniquement si le verset qui démarre est sous la
-  // zone visible (jamais vers le haut : ça ne doit pas gêner une lecture du
-  // texte scrollée manuellement pendant l'écoute). Tient compte de la barre
-  // de navigation fixe en bas, qui cache le bas réel de l'écran.
+  function hauteurBarreNavigation(): number {
+    const barre = document.querySelector(".barre-navigation");
+    return barre ? barre.getBoundingClientRect().height : 0;
+  }
+
+  function scrollVersVerset(numero: number) {
+    const el = document.getElementById(`verset-${numero}`);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - hauteurBarreNavigation();
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
   function descendreSiHorsChamp(numero: number) {
     const el = document.getElementById(`verset-${numero}`);
     if (!el) return;
-    const barre = document.querySelector(".barre-navigation");
-    const margeBasse = barre ? barre.getBoundingClientRect().height : 0;
-    if (el.getBoundingClientRect().top > window.innerHeight - margeBasse) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const MARGE_DETECTION_PX = 20;
+    if (el.getBoundingClientRect().top > window.innerHeight - hauteurBarreNavigation() - MARGE_DETECTION_PX) {
+      scrollVersVerset(numero);
     }
   }
 
-  // `depart` (numéro de verset) absent : reprend en pause si déjà chargé,
-  // sinon repart du début. Présent (clic sur "(n)") : saute à ce verset,
-  // même en cours de lecture ou en pause ailleurs.
   function jouer(nouveauDossier: string, versets: Verset[], depart?: number) {
     if (depart === undefined && etat === "pause" && dossierRef.current === nouveauDossier) {
       audioRef.current?.play();
@@ -72,12 +71,8 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
     dossierRef.current = nouveauDossier;
     versetsRef.current = versets;
     setDossier(nouveauDossier);
-    // Départ du tout début (bouton lecture après arrêt, pas un clic sur un
-    // verset précis) : on remonte au premier verset (0 = Bismillah si
-    // présente, sinon 1) — pas à `top: 0` qui s'arrêterait sur le titre de
-    // la sourate, au-dessus, avec le premier verset encore hors champ.
-    if (depart === undefined) {
-      document.getElementById(`verset-${versets[0]?.numero}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (depart === undefined && versets[0]) {
+      scrollVersVerset(versets[0].numero);
     }
     const index = depart !== undefined ? versets.findIndex((v) => v.numero === depart) : 0;
     chargerEtJouer(index >= 0 ? index : 0);
@@ -89,10 +84,6 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
     setEtat("pause");
   }
 
-  // Point d'entrée unique du bouton play/pause et du raccourci espace :
-  // décide lui-même pause/reprise/départ selon l'état courant du Provider
-  // (source unique de vérité), plutôt que de faire confiance à un `enLecture`
-  // recalculé côté appelant qui peut se retrouver en retard d'un rendu.
   function basculerLecture(dossierCible: string, versets: Verset[]) {
     if (etat === "lecture" && dossierRef.current === dossierCible) {
       mettreEnPause();
@@ -126,8 +117,6 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
     chargerEtJouer(suivant);
   }
 
-  // Cherche, parmi les débuts de mot du verset en cours, le dernier <= au
-  // temps de lecture actuel : c'est le mot en train d'être récité.
   function surTimeUpdate() {
     const audio = audioRef.current;
     const d = dossierRef.current;
