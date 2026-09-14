@@ -2,6 +2,8 @@
 
 [![license](https://img.shields.io/github/license/julienagullo/yawasla-corpus.svg)](https://github.com/julienagullo/yawasla-corpus/blob/main/LICENSE.md)
 
+**Website**: <https://corpus.yawasla.org>
+
 A Quran reading app, verse by verse, with an official multilingual translation (French, English, Spanish) and vocabulary learning on hover: every Arabic word shows its translation and grammatical analysis.
 
 **Status: work in very slow progress.** The project moves forward sura by sura — see [CLAUDE.md](./CLAUDE.md) for the full scope and current progress.

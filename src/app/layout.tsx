@@ -26,8 +26,10 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://corpus.yawasla.org"),
   title: "Yawasla Corpus",
   description: "Prototype de lecture verset par verset avec traduction au survol des mots.",
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
