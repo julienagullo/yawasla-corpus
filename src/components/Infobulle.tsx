@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useRef, useState, type ReactNode } from "react";
-import type { Langue, Mot as MotType } from "@/data/types";
+import type { Langue, Mot as MotType } from "@/conf/types";
 import { useTransliteration } from "@/components/TransliterationProvider";
 
 const DELAI_FERMETURE_MS = 2000;

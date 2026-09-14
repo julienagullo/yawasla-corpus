@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { padId, titreSourate, type Sourate } from "@/data/summary";
-import type { Langue } from "@/data/types";
-import { urlPourLangue } from "@/lib/locale";
+import type { Langue } from "@/conf/types";
+import { urlPourLangue } from "@/conf/locale";
 
 export default function ListeSourates({ sourates, langue }: { sourates: Sourate[]; langue: Langue }) {
   return (

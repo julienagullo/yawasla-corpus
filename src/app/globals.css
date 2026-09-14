@@ -65,14 +65,19 @@ body {
   color: var(--bs-success);
 }
 
-.barre-navigation__bouton--desactive {
+.barre-navigation__bouton--desactive,
+.barre-navigation__bouton:disabled {
   opacity: 0.3;
   pointer-events: none;
 }
 
 /* Switch translittération : icône + interrupteur iOS (Bootstrap form-switch),
-   alignés comme les autres boutons de la barre. La géométrie interne du
-   switch (padding/margin négatif) reste celle par défaut de Bootstrap. */
+   alignés comme les autres boutons de la barre. Bootstrap réserve l'espace
+   du switch via un padding-left sur .form-check puis ramène l'input dedans
+   avec un margin-left négatif (pensé pour un label Bootstrap classique,
+   absent ici) : sans label à aligner, ça laisse juste un espace fantôme à
+   droite du switch (visible en survolant l'input dans l'inspecteur) — on
+   neutralise les deux côtés de cette mécanique plutôt que de la garder. */
 .barre-navigation__switch {
   display: flex;
   align-items: center;
@@ -82,8 +87,13 @@ body {
   cursor: pointer;
 }
 
+.barre-navigation__switch .form-check {
+  padding-left: 0;
+}
+
 .barre-navigation__switch .form-check-input {
   cursor: pointer;
+  margin-left: 0;
 }
 
 /* Vert au lieu du bleu Bootstrap par défaut quand le switch est activé. */
@@ -134,6 +144,41 @@ body {
   color: var(--bs-body-color);
 }
 
+/* Popup "i" (récitateur + sources) : même mécanique que .menu-langue, panneau
+   texte plus large plutôt qu'une liste d'options. */
+.menu-info {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-info__panneau {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin: 0 0 0.5rem;
+  padding: 0.9rem 1rem;
+  width: max-content;
+  max-width: 280px;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  font-size: 0.85rem;
+}
+
+.menu-info__titre {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.menu-info__ligne {
+  margin: 0 0 0.4rem;
+}
+
+.menu-info__ligne:last-child {
+  margin-bottom: 0;
+}
+
 /* Un bloc par verset : texte arabe centré, traduction littéraire en dessous. */
 .verset {
   margin-bottom: 2.5rem;
@@ -172,6 +217,11 @@ body {
   color: var(--bs-success);
 }
 
+/* Mot en cours de récitation (lecture audio) : même vert que le survol/tap. */
+.mot--recitation {
+  color: var(--bs-success);
+}
+
 /* Lien vers une sourate dans le sommaire : même survol (vert) que les mots. */
 .sourate-lien {
   color: var(--bs-body-color);
@@ -179,6 +229,21 @@ body {
 }
 
 .sourate-lien:hover {
+  color: var(--bs-success);
+}
+
+/* Numéro de verset cliquable (démarre/saute la lecture audio à ce verset) :
+   reset du <button>, même survol vert que les mots/liens. */
+.numero-verset {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+.numero-verset:hover {
   color: var(--bs-success);
 }
 

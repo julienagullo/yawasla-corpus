@@ -1,12 +1,5 @@
-import type { Verset } from "../types";
+import type { Verset } from "@/conf/types";
 
-// Sources (voir CLAUDE.md) :
-// - Texte arabe : quran-simple.xml (Tanzil Project).
-// - Traductions officielles : fr.hamidullah.xml, en.ahmedali.xml, es.bornez.xml (Tanzil Project).
-// - Grammaire mot-à-mot : quranic-corpus-morphology-0.4.txt (Quranic Arabic Corpus).
-// Mot-à-mot : par défaut le mot de la traduction officielle correspondante (FR
-// Hamidullah, EN Ahmed Ali, ES Bornez), sauf « envers eux »/« upon them »/
-// « sobre ellos » (v.7, x2) où aucune des 3 ne rend le mot arabe séparément.
 export const versets: Verset[] = [
   {
     numero: 1,
@@ -45,6 +38,7 @@ export const versets: Verset[] = [
       en: "In the name of Allah, most benevolent, ever-merciful.",
       es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
     },
+    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.9"],
   },
   {
     numero: 2,
@@ -95,6 +89,7 @@ export const versets: Verset[] = [
       en: "ALL PRAISE BE to Allah, Lord of all the worlds,",
       es: "La alabanza es para Dios, Señor de los mundos,",
     },
+    audio: ["00:00.0", "00:01.2", "00:02.0", "00:02.6"],
   },
   {
     numero: 3,
@@ -117,6 +112,7 @@ export const versets: Verset[] = [
       en: "Most beneficent, ever-merciful,",
       es: "el Clementísimo con toda la Creación, el Misericordiosísimo con los creyentes,",
     },
+    audio: ["00:00.0", "00:1.4"],
   },
   {
     numero: 4,
@@ -157,6 +153,7 @@ export const versets: Verset[] = [
       en: "King of the Day of Judgement.",
       es: "Soberano del Día de la Recompensa.",
     },
+    audio: ["00:00.0", "00:00.7", "00:01.8"],
   },
   {
     numero: 5,
@@ -207,6 +204,7 @@ export const versets: Verset[] = [
       en: "You alone we worship, and to You alone turn for help.",
       es: "Solamente a Ti adoramos y solamente a Ti pedimos ayuda.",
     },
+    audio: ["00:00.0", "00:01.2", "00:02.2", "00:03.4"],
   },
   {
     numero: 6,
@@ -247,6 +245,7 @@ export const versets: Verset[] = [
       en: "Guide us (O Lord) to the path that is straight,",
       es: "Guíanos al camino recto,",
     },
+    audio: ["00:00.0", "00:01.3", "00:02.2"],
   },
   {
     numero: 7,
@@ -351,5 +350,6 @@ export const versets: Verset[] = [
       en: "The path of those You have blessed, Not of those who have earned Your anger, nor those who have gone astray.",
       es: "el camino de aquellos a los que Tú has agraciado; no el de aquellos con los que Tú estás disgustado, ni el de los extraviados.",
     },
+    audio: ["00:00.0", "00:01.1", "00:01.8", "00:03.0", "00:04.0", "00:05.0", "00:06.0", "00:07.0", "00:08.2"],
   },
 ];

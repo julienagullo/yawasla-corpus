@@ -2,8 +2,6 @@ export type Langue = "fr" | "en" | "es";
 
 export type Mot = {
   texte: string;
-  // Translittération phonétique (identique quelle que soit la langue
-  // d'affichage — ce n'est pas une traduction, juste une lecture).
   transliteration: string;
   traduction: Record<Langue, string>;
   grammaire: Record<Langue, string>;
@@ -12,8 +10,11 @@ export type Mot = {
 export type Verset = {
   numero: number;
   mots: Mot[];
-  // Traduction officielle du verset, dans les 3 langues.
   traduction: Record<Langue, string>;
+  // Départ ("mm:ss") de chaque mot dans le clip audio du verset (Al-Hussary),
+  // un par mot dans `mots`, calé à l'oreille. Absent tant que la sourate n'a
+  // pas d'audio découpé.
+  audio?: string[];
 };
 
 export type NomSourate = {

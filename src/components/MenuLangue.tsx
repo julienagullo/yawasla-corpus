@@ -3,8 +3,9 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LANGUES, langueDePathname, urlPourLangue } from "@/lib/locale";
-import type { Langue } from "@/data/types";
+import { LANGUES, langueDePathname, urlPourLangue } from "@/conf/locale";
+import { LIBELLES } from "@/conf/libelles";
+import type { Langue } from "@/conf/types";
 
 const LIBELLE_LANGUE: Record<Langue, string> = { fr: "Français", en: "English", es: "Español" };
 const DELAI_FERMETURE_MS = 300;
@@ -37,7 +38,8 @@ export default function MenuLangue() {
       <button
         type="button"
         className="barre-navigation__bouton"
-        aria-label={`Changer de langue (${LIBELLE_LANGUE[langue]})`}
+        title={`${LIBELLES[langue].changerLangue} (${LIBELLE_LANGUE[langue]})`}
+        aria-label={`${LIBELLES[langue].changerLangue} (${LIBELLE_LANGUE[langue]})`}
         aria-haspopup="true"
         aria-expanded={ouvert}
         onClick={() => setOuvert((v) => !v)}

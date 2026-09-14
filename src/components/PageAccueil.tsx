@@ -1,5 +1,5 @@
 import { sourates } from "@/data/summary";
-import type { Langue } from "@/data/types";
+import type { Langue } from "@/conf/types";
 import ListeSourates from "@/components/ListeSourates";
 
 export default function PageAccueil({ langue }: { langue: Langue }) {

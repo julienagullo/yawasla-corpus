@@ -3,11 +3,15 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { sourates, padId, titreSourate } from "@/data/summary";
-import { langueDePathname, urlPourLangue } from "@/lib/locale";
+import { sourates, padId, titreSourate, getVersets } from "@/data/summary";
+import { langueDePathname, urlPourLangue } from "@/conf/locale";
+import { LIBELLES } from "@/conf/libelles";
+import { aAudio } from "@/conf/audio";
 import { useTheme } from "@/components/ThemeProvider";
 import { useTransliteration } from "@/components/TransliterationProvider";
 import MenuLangue from "@/components/MenuLangue";
+import MenuInfo from "@/components/MenuInfo";
+import LecteurAudio from "@/components/LecteurAudio";
 
 // Barre fixe en bas, présente sur toutes les pages : sommaire + langue à
 // gauche, sourate en cours au centre (vide hors lecture), précédent/suivant
@@ -15,6 +19,7 @@ import MenuLangue from "@/components/MenuLangue";
 export default function BarreNavigation() {
   const pathname = usePathname();
   const langue = langueDePathname(pathname);
+  const libelles = LIBELLES[langue];
   const { theme, basculerTheme } = useTheme();
 
   // Le layout racine (unique, partagé par toutes les routes) ne peut pas
@@ -30,6 +35,7 @@ export default function BarreNavigation() {
   const idActuel = Number(pathname.match(/^(?:\/(?:en|es))?\/sourate\/(\d+)\//)?.[1]);
   const indexActuel = disponibles.findIndex((s) => s.id === idActuel);
   const sourateActuelle = indexActuel >= 0 ? disponibles[indexActuel] : null;
+  const dossierAudio = sourateActuelle ? `${padId(sourateActuelle.id)}-${sourateActuelle.slug}` : null;
   const precedente = indexActuel > 0 ? disponibles[indexActuel - 1] : null;
   const suivante = indexActuel >= 0 && indexActuel < disponibles.length - 1 ? disponibles[indexActuel + 1] : null;
 
@@ -40,7 +46,12 @@ export default function BarreNavigation() {
   return (
     <nav className="barre-navigation">
       <div className="barre-navigation__groupe">
-        <Link href={urlPourLangue("/", langue)} className="barre-navigation__bouton" aria-label="Sommaire">
+        <Link
+          href={urlPourLangue("/", langue)}
+          className="barre-navigation__bouton"
+          title={libelles.sommaire}
+          aria-label={libelles.sommaire}
+        >
           <i className="bi bi-list-ul" aria-hidden="true" />
         </Link>
         <MenuLangue />
@@ -48,16 +59,20 @@ export default function BarreNavigation() {
           type="button"
           onClick={basculerTheme}
           className="barre-navigation__bouton"
-          aria-label={theme === "sombre" ? "Passer en mode clair" : "Passer en mode sombre"}
+          title={theme === "sombre" ? libelles.modeClair : libelles.modeSombre}
+          aria-label={theme === "sombre" ? libelles.modeClair : libelles.modeSombre}
         >
           <i className={`bi ${theme === "sombre" ? "bi-sun" : "bi-moon"}`} aria-hidden="true" />
         </button>
+        <MenuInfo langue={langue} />
       </div>
 
-      <div className="barre-navigation__titre">{sourateActuelle ? titreSourate(sourateActuelle, langue) : null}</div>
+      <div className="barre-navigation__titre d-none d-sm-block">
+        {sourateActuelle ? titreSourate(sourateActuelle, langue) : null}
+      </div>
 
       <div className="barre-navigation__groupe">
-        <label className="barre-navigation__switch" title="Translittération">
+        <label className="barre-navigation__switch" title={libelles.translitteration}>
           <i className="bi bi-type" aria-hidden="true" />
           <span className="form-check form-switch m-0">
             <input
@@ -66,12 +81,20 @@ export default function BarreNavigation() {
               role="switch"
               checked={afficherTransliteration}
               onChange={basculerTransliteration}
-              aria-label="Afficher la translittération dans l'infobulle des mots"
+              aria-label={libelles.translitteration}
             />
           </span>
         </label>
+        {sourateActuelle && dossierAudio && aAudio(dossierAudio) && (
+          <LecteurAudio dossier={dossierAudio} versets={getVersets(sourateActuelle.id)} langue={langue} />
+        )}
         {precedente ? (
-          <Link href={urlSourate(precedente)} className="barre-navigation__bouton" aria-label="Sourate précédente">
+          <Link
+            href={urlSourate(precedente)}
+            className="barre-navigation__bouton"
+            title={libelles.souratePrecedente}
+            aria-label={libelles.souratePrecedente}
+          >
             ←
           </Link>
         ) : (
@@ -80,7 +103,12 @@ export default function BarreNavigation() {
           </span>
         )}
         {suivante ? (
-          <Link href={urlSourate(suivante)} className="barre-navigation__bouton" aria-label="Sourate suivante">
+          <Link
+            href={urlSourate(suivante)}
+            className="barre-navigation__bouton"
+            title={libelles.sourateSuivante}
+            aria-label={libelles.sourateSuivante}
+          >
             →
           </Link>
         ) : (

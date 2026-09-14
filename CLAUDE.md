@@ -65,6 +65,13 @@ Hébergement cible : VPS, le build statique est simplement servi par le serveur 
 
 **Obligations de licence (les deux sources) : copie verbatim uniquement, ne jamais modifier le texte/l'annotation, attribution + lien obligatoires et visibles sur le site** (Tanzil Project → tanzil.net, Quranic Arabic Corpus → corpus.quran.com). Le découpage du texte en mots cliquables n'est pas une modification tant que le contenu affiché reste identique.
 
+## Audio (récitation)
+
+Récitateur : Al-Hussary (`sources/audio/`, un mp3 par sourate complète, attribution à faire dans un futur volet remerciements/licences).
+Découpage en un mp3 par verset dans `public/assets/audio/<id>-<slug>/` (ex. `001-al-fatiha/01.mp3`), enregistré dans `conf/audio.ts`.
+**Bismillah : verset `numero: 0` dans `sourate_NNN.ts`** (mots/traduction/audio identiques au verset 1 d'Al-Fatiha, seule sourate où c'est un vrai verset), sauf At-Tawbah/9 qui n'en a pas — pas comptée comme un verset par les savants, donc `NumeroVerset` n'affiche pas de numéro pour elle (voir `src/components/NumeroVerset.tsx`), mais elle est lue/surlignée normalement. Copier aussi `001-al-fatiha/01.mp3` en `00.mp3` dans le dossier audio de la nouvelle sourate (fichier dupliqué plutôt que référencé depuis celui d'Al-Fatiha, pour garder chaque dossier audio autonome).
+Minutage mot-à-mot (surlignage pendant la lecture) : champ `Verset.audio` (`"mm:ss.d"`, un timestamp de départ par mot) dans `src/data/sourates/sourate_NNN.ts`, calé à l'oreille.
+
 ## Évolutions
 
 Tout ce qui n'est pas listé dans « Concept » ci-dessus à ne pas développer sans demande explicite. Exemple d'évolutions possibles :

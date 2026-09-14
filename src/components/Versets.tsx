@@ -1,16 +1,25 @@
-import type { Langue, Verset } from "@/data/types";
+import type { Langue, Verset } from "@/conf/types";
 import Mot from "@/components/Mot";
+import NumeroVerset from "@/components/NumeroVerset";
 
-export default function Versets({ versets, langue }: { versets: Verset[]; langue: Langue }) {
+export default function Versets({
+  versets,
+  langue,
+  dossier,
+}: {
+  versets: Verset[];
+  langue: Langue;
+  dossier?: string;
+}) {
   return (
     <div className="versets">
       {versets.map((verset) => (
-        <div className="verset" key={verset.numero}>
+        <div className="verset" id={`verset-${verset.numero}`} key={verset.numero}>
           <div className="arabic-text">
             {verset.mots.map((mot, i) => (
-              <Mot key={i} mot={mot} />
+              <Mot key={i} mot={mot} dossier={dossier} verset={verset.numero} index={i} />
             ))}
-            <span className="mx-1 fs-6 text-muted">({verset.numero})</span>
+            <NumeroVerset numero={verset.numero} dossier={dossier} versets={versets} langue={langue} />
           </div>
           {/* dir="ltr" explicite : sans ça, ce paragraphe en langue latine hérite
               du dir="rtl" du conteneur arabe et sa ponctuation finale se retrouve

@@ -5,6 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TransliterationProvider } from "@/components/TransliterationProvider";
+import { LectureAudioProvider } from "@/components/LectureAudioProvider";
 import BarreNavigation from "@/components/BarreNavigation";
 
 const geistSans = Geist({
@@ -38,8 +39,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-vh-100 d-flex flex-column">
         <ThemeProvider>
           <TransliterationProvider>
-            {children}
-            <BarreNavigation />
+            <LectureAudioProvider>
+              {children}
+              <BarreNavigation />
+            </LectureAudioProvider>
           </TransliterationProvider>
         </ThemeProvider>
       </body>

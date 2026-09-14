@@ -1,5 +1,5 @@
 import { titreSourate, type Sourate } from "@/data/summary";
-import type { Langue } from "@/data/types";
+import type { Langue } from "@/conf/types";
 
 export default function TitreSourate({ sourate, langue }: { sourate: Sourate; langue: Langue }) {
   return (

@@ -1,7 +1,8 @@
-import type { Verset, NomSourate, Langue } from "./types";
+import type { Verset, NomSourate, Langue } from "@/conf/types";
 import { versets as versetsSourate1 } from "./sourates/sourate_001";
+import { versets as versetsSourate114 } from "./sourates/sourate_114";
 
-export type { Mot, Verset, Langue, NomSourate } from "./types";
+export type { Mot, Verset, Langue, NomSourate } from "@/conf/types";
 
 export type Sourate = {
   id: number;
@@ -12,7 +13,7 @@ export type Sourate = {
 
 export const sourates: Sourate[] = [
   { id: 1, slug: "al-fatiha", nom: { arabe: "الفاتحة", transliteration: "Al-Fatiha", sens: { fr: "L'Ouverture", en: "The Opening", es: "La Apertura" } }, disponible: true },
-  { id: 114, slug: "an-nas", nom: { arabe: "الناس", transliteration: "An-Nas", sens: { fr: "Les Hommes", en: "Mankind", es: "Los Hombres" } }, disponible: false },
+  { id: 114, slug: "an-nas", nom: { arabe: "الناس", transliteration: "An-Nas", sens: { fr: "Les Hommes", en: "Mankind", es: "Los Hombres" } }, disponible: true },
   { id: 113, slug: "al-falaq", nom: { arabe: "الفلق", transliteration: "Al-Falaq", sens: { fr: "L'Aube naissante", en: "The Daybreak", es: "El Amanecer" } }, disponible: false },
   { id: 112, slug: "al-ikhlas", nom: { arabe: "الإخلاص", transliteration: "Al-Ikhlas", sens: { fr: "Le Monothéisme pur", en: "The Sincerity", es: "La Sinceridad" } }, disponible: false },
   { id: 111, slug: "al-masad", nom: { arabe: "المسد", transliteration: "Al-Masad", sens: { fr: "Les Fibres", en: "The Palm Fiber", es: "Las Fibras" } }, disponible: false },
@@ -138,6 +139,7 @@ export function titreSourate(sourate: Sourate, langue: Langue = "fr"): string {
 
 const versetsParId: Record<number, Verset[]> = {
   1: versetsSourate1,
+  114: versetsSourate114,
 };
 
 export function getVersets(id: number): Verset[] {
