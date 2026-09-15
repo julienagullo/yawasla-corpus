@@ -5,22 +5,15 @@ import { useLectureAudio } from "@/components/LectureAudioProvider";
 import { LIBELLES } from "@/conf/libelles";
 import type { Langue, Verset } from "@/conf/types";
 
-// Éléments qui gèrent déjà l'espace nativement (champ de saisie...) : on ne
-// leur vole pas la touche. Les boutons/liens de la barre eux-mêmes ne
-// gardent jamais le focus après un clic souris (voir onMouseDown plus bas),
-// donc l'espace leur arrive rarement — cette liste reste un filet de sécurité.
+// Éléments qui gèrent déjà l'espace nativement (champ de saisie...) : on ne leur vole pas la touche.
 const BALISES_INTERACTIVES = new Set(["INPUT", "TEXTAREA", "SELECT"]);
 
-// Un clic souris ne doit pas laisser le focus sur le bouton : sinon un
-// espace ultérieur (pensé comme play/pause) réactive nativement CE bouton
-// précis (relance ce verset, re-stoppe...) plutôt que de basculer la lecture.
-// Le focus clavier (Tab) n'est pas concerné : seul le mousedown est bloqué.
+// Empêche le focus après un clic souris, sinon un espace ultérieur réactive nativement ce bouton précis au lieu de basculer la lecture (Tab n'est pas concerné).
 function empecherFocus(e: React.MouseEvent) {
   e.preventDefault();
 }
 
-// Boutons play/pause/stop de la barre de navigation : simple vue sur l'état
-// partagé (voir LectureAudioProvider), qui porte le vrai <audio>.
+// Boutons play/pause/stop : simple vue sur l'état partagé porté par LectureAudioProvider.
 export default function LecteurAudio({
   dossier,
   versets,
@@ -39,10 +32,7 @@ export default function LecteurAudio({
     basculerLecture(dossier, versets);
   }
 
-  // `basculer` change de référence à chaque rendu (dossier/versets viennent
-  // des props, basculerLecture du contexte) : on la lit via une ref pour
-  // n'attacher l'écouteur qu'une seule fois, sans jamais désabonner/réabonner
-  // pendant la lecture (le contexte change souvent : mot en cours, etc.).
+  // Lu via une ref pour n'attacher l'écouteur qu'une seule fois malgré le changement de référence de `basculer` à chaque rendu.
   const basculerRef = useRef(basculer);
   useEffect(() => {
     basculerRef.current = basculer;
@@ -81,9 +71,7 @@ export default function LecteurAudio({
         onMouseDown={empecherFocus}
         onClick={arreter}
         disabled={!actif || etat === "arret"}
-        // Faux positif d'hydratation connu avec certaines extensions
-        // navigateur (ex. Antidote) qui touchent au DOM avant que React ne
-        // s'hydrate : l'expression ci-dessus ne peut jamais produire `null`.
+        // Faux positif d'hydratation connu avec certaines extensions navigateur (ex. Antidote) : l'expression ci-dessus ne peut jamais produire `null`.
         suppressHydrationWarning
       >
         <i className="bi bi-stop-fill" aria-hidden="true" />

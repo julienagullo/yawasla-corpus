@@ -1,6 +1,4 @@
-// Un seul récitateur (Al-Hussary) — attribution/licence à faire dans un
-// futur volet "remerciements", pas dans le code. Dossier "assets/audio/"
-// nommé <id>-<slug> (ex. "001-al-fatiha"), un mp3 par verset.
+// Un seul récitateur (Al-Hussary) ; dossier "assets/audio/<id>-<slug>", un mp3 par verset.
 const DOSSIERS_AVEC_AUDIO = new Set(["001-al-fatiha", "114-an-nas"]);
 
 export function aAudio(dossier: string): boolean {

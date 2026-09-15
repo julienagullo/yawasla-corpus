@@ -31,8 +31,7 @@ type TransliterationContexte = {
 
 const TransliterationContext = createContext<TransliterationContexte | null>(null);
 
-// Affichage optionnel de la translittération dans l'infobulle des mots (aide
-// pour les débutants qui ne lisent pas encore l'arabe), mémorisé en local.
+// Affichage optionnel de la translittération dans l'infobulle, mémorisé en local.
 export function TransliterationProvider({ children }: { children: ReactNode }) {
   const afficher = useSyncExternalStore(sabonner, lireAffichage, getServerSnapshot);
 

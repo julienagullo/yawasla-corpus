@@ -21,9 +21,6 @@ export default function Versets({
             ))}
             <NumeroVerset numero={verset.numero} dossier={dossier} versets={versets} langue={langue} />
           </div>
-          {/* dir="ltr" explicite : sans ça, ce paragraphe en langue latine hérite
-              du dir="rtl" du conteneur arabe et sa ponctuation finale se retrouve
-              affichée à gauche au lieu de la droite. */}
           <p className="traduction-litterale" dir="ltr">
             {verset.traduction[langue]}
           </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { LIBELLES } from "@/conf/libelles";
 import { RECITATEUR, SOURCES, GITHUB_URL } from "@/conf/license";
 import type { Langue } from "@/conf/types";
@@ -10,6 +10,7 @@ const DELAI_FERMETURE_MS = 300;
 export default function MenuInfo({ langue }: { langue: Langue }) {
   const libelles = LIBELLES[langue];
   const [ouvert, setOuvert] = useState(false);
+  const conteneurRef = useRef<HTMLDivElement>(null);
   const fermeture = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function annulerFermeture() {
@@ -26,8 +27,27 @@ export default function MenuInfo({ langue }: { langue: Langue }) {
     fermeture.current = setTimeout(() => setOuvert(false), DELAI_FERMETURE_MS);
   }
 
+  function surPointerEnter(e: React.PointerEvent) {
+    if (e.pointerType === "mouse") ouvrir();
+  }
+
+  function surPointerLeave(e: React.PointerEvent) {
+    if (e.pointerType === "mouse") programmerFermeture();
+  }
+
+  useEffect(() => {
+    if (!ouvert) return;
+    function surPointerDown(e: PointerEvent) {
+      if (conteneurRef.current && !conteneurRef.current.contains(e.target as Node)) {
+        setOuvert(false);
+      }
+    }
+    document.addEventListener("pointerdown", surPointerDown);
+    return () => document.removeEventListener("pointerdown", surPointerDown);
+  }, [ouvert]);
+
   return (
-    <div className="menu-info" onMouseEnter={ouvrir} onMouseLeave={programmerFermeture}>
+    <div ref={conteneurRef} className="menu-info" onPointerEnter={surPointerEnter} onPointerLeave={surPointerLeave}>
       <button
         type="button"
         className="barre-navigation__bouton"

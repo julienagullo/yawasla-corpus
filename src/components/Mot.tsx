@@ -1,13 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { Mot as MotType } from "@/conf/types";
 import { useInfobulle } from "@/components/Infobulle";
 import { useLectureAudio } from "@/components/LectureAudioProvider";
 
-// Click en plus du hover : mobile first, pas de vrai survol au doigt.
-// `dossier`/`verset`/`index` optionnels : uniquement pour comparer au mot en
-// cours de récitation (absents tant que la sourate n'a pas d'audio).
+// Click en plus du hover (mobile first) ; dossier/verset/index optionnels, utilisés seulement pour comparer au mot en cours de récitation.
 export default function Mot({
   mot,
   dossier,
@@ -20,11 +18,19 @@ export default function Mot({
   index?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const { motActif, visible, afficher, programmerFermeture } = useInfobulle();
+  const { motActif, visible, afficher, programmerFermeture, enregistrerMot, desenregistrerMot } = useInfobulle();
   const { motActif: motEnLecture } = useLectureAudio();
 
+  // Permet à Infobulle de retrouver ce mot pendant un glissement tactile (voir Infobulle.tsx).
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    enregistrerMot(el, mot, verset);
+    return () => desenregistrerMot(el);
+  }, [mot, verset, enregistrerMot, desenregistrerMot]);
+
   function ouvrir() {
-    if (ref.current) afficher(mot, ref.current);
+    if (ref.current) afficher(mot, ref.current, verset);
   }
 
   const actif = motActif === mot && visible;

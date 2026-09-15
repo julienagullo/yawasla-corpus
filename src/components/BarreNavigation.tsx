@@ -13,18 +13,14 @@ import MenuLangue from "@/components/MenuLangue";
 import MenuInfo from "@/components/MenuInfo";
 import LecteurAudio from "@/components/LecteurAudio";
 
-// Barre fixe en bas, présente sur toutes les pages : sommaire + langue à
-// gauche, sourate en cours au centre (vide hors lecture), précédent/suivant
-// à droite (uniquement parmi les sourates disponibles, dans la langue en cours).
+// Barre fixe en bas sur toutes les pages : sommaire/langue, sourate en cours, navigation précédent/suivant.
 export default function BarreNavigation() {
   const pathname = usePathname();
   const langue = langueDePathname(pathname);
   const libelles = LIBELLES[langue];
   const { theme, basculerTheme } = useTheme();
 
-  // Le layout racine (unique, partagé par toutes les routes) ne peut pas
-  // connaître le segment [locale] au rendu serveur : on corrige l'attribut
-  // lang de <html> ici, dès qu'on connaît la langue via l'URL.
+  // Le layout racine ne connaît pas le segment [locale] au rendu serveur : on corrige lang sur <html> ici une fois la langue connue via l'URL.
   useEffect(() => {
     document.documentElement.lang = langue;
   }, [langue]);

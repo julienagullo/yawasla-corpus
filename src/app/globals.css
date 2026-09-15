@@ -8,11 +8,36 @@ body {
   padding-bottom: 3.5rem;
 }
 
+/* Sous 576px (breakpoint Bootstrap "sm", déjà celui qui masque le titre de
+   la barre via d-none d-sm-block) : les boutons de la barre ne tiennent
+   plus sur une ligne, on réserve donc la hauteur des 2 lignes qu'elle prend
+   alors (voir .barre-navigation plus bas). */
+@media (max-width: 575.98px) {
+  body {
+    padding-bottom: 6rem;
+  }
+}
+
 /* Titre arabe (accueil + page sourate) : même police que le texte des
    versets (Amiri), en texte classique plutôt qu'en image de calligraphie. */
 .titre-accueil {
   font-family: var(--font-amiri);
   font-size: clamp(4rem, 8vw, 3.5rem);
+}
+
+/* Sommaire (accueil) : liste des 114 sourates. En dessous de 576px (mobile),
+   1 seule colonne ; au-dessus, 2 colonnes de 57 sourates chacune, remplies
+   dans l'ordre (1-57 à gauche, 58-114 à droite), sans jamais couper une
+   sourate entre 2 colonnes. */
+@media (min-width: 576px) {
+  .sommaire-liste {
+    columns: 2;
+    column-gap: 0;
+  }
+
+  .sommaire-liste li {
+    break-inside: avoid;
+  }
 }
 
 /* Barre globale fixe en bas : sommaire + langue à gauche, sourate en cours
@@ -39,10 +64,23 @@ body {
   flex: 0 0 auto;
 }
 
+/* Sous 576px, le titre disparaît déjà (d-none d-sm-block) et les 2 groupes
+   de boutons ne tiennent plus sur une seule ligne (voir signalement :
+   "plus ça rétrécit plus les boutons disparaissent à droite" — ils
+   débordaient hors écran, rien ne les faisait rétrécir ni passer à la
+   ligne). On passe alors sur 2 lignes nettes, chacune centrée : bloc gauche
+   en haut, bloc droite en dessous. */
+@media (max-width: 575.98px) {
+  .barre-navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 .barre-navigation__titre {
   flex: 1 1 auto;
   min-width: 0;
-  text-align: center;
+  text-align: left;
   font-size: 0.9rem;
   white-space: nowrap;
   overflow: hidden;
@@ -122,6 +160,20 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+/* Même correctif que .menu-info__panneau : sous 576px, le bouton "globe"
+   n'est pas collé au bord gauche de l'écran (boutons centrés), donc ce menu
+   ancré à `left: 0` par rapport au bouton pouvait déborder. Ancré à l'écran
+   et centré (au lieu d'étiré comme .menu-info__panneau, sa liste de langues
+   reste volontairement compacte plutôt que pleine largeur). */
+@media (max-width: 575.98px) {
+  .menu-langue__liste {
+    position: fixed;
+    bottom: 6.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .menu-langue__option {
   display: block;
   width: 100%;
@@ -166,6 +218,22 @@ body {
   font-size: 0.85rem;
 }
 
+/* Sous 576px, le bouton "i" n'est pas collé au bord gauche de l'écran (les
+   boutons sont centrés, voir .barre-navigation) : ancré à `left: 0` par
+   rapport au bouton, le panneau débordait donc à droite de l'écran, coupé,
+   illisible. On l'ancre à la place à l'écran lui-même (marges fixes de
+   chaque côté), au-dessus de la barre (2 lignes sous ce breakpoint). */
+@media (max-width: 575.98px) {
+  .menu-info__panneau {
+    position: fixed;
+    bottom: 6.5rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-width: none;
+  }
+}
+
 .menu-info__titre {
   margin: 0 0 0.5rem;
   font-weight: 600;
@@ -206,11 +274,19 @@ body {
 }
 
 /* Mot survolable/tapable : transition douce vers le vert (Bootstrap n'a pas
-   d'utilitaire "transition-colors" comme Tailwind). */
+   d'utilitaire "transition-colors" comme Tailwind). Sélection de texte et
+   callout (menu copier/sélectionner) désactivés : sans ça, un doigt posé
+   sans bouger sur un mot déclenche la sélection native au lieu de
+   l'infobulle, et le tap ne produit alors plus de `click` (donc plus rien
+   ne s'ouvre au premier essai — voir Mot.tsx/Infobulle.tsx). */
 .mot {
   position: relative;
   transition: color 0.2s ease-out;
   cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
 
 .mot--actif {
@@ -233,7 +309,11 @@ body {
 }
 
 /* Numéro de verset cliquable (démarre/saute la lecture audio à ce verset) :
-   reset du <button>, même survol vert que les mots/liens. */
+   reset du <button>, même survol vert que les mots/liens.
+   "(n)" et l'icône play se superposent dans la même cellule de grille (au
+   lieu d'un simple display:none/inline) : le bouton garde ainsi toujours la
+   largeur de son contenu le plus large et ne décale pas le texte autour
+   quand l'un cède la place à l'autre. */
 .numero-verset {
   border: none;
   background: none;
@@ -241,23 +321,34 @@ body {
   font: inherit;
   cursor: pointer;
   transition: color 0.2s ease-out;
+  display: inline-grid;
+  place-items: center;
 }
 
 .numero-verset:hover {
   color: var(--bs-success);
 }
 
-/* Au survol, le "(n)" cède la place à une icône play. */
+.numero-verset__numero,
 .numero-verset__icone {
-  display: none;
+  grid-area: 1 / 1;
 }
 
-.numero-verset:hover .numero-verset__numero {
-  display: none;
+.numero-verset__icone {
+  visibility: hidden;
 }
 
-.numero-verset:hover .numero-verset__icone {
-  display: inline;
+/* Au survol, le "(n)" cède la place à une icône play. Même bascule quand
+   l'infobulle d'un mot de ce verset est ouverte (--actif) : au tactile, sans
+   survol, c'est le seul indice que ce bouton joue le verset. */
+.numero-verset:hover .numero-verset__numero,
+.numero-verset--actif .numero-verset__numero {
+  visibility: hidden;
+}
+
+.numero-verset:hover .numero-verset__icone,
+.numero-verset--actif .numero-verset__icone {
+  visibility: visible;
 }
 
 .mot-infobulle {

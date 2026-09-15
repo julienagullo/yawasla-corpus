@@ -11,9 +11,7 @@ export type Verset = {
   numero: number;
   mots: Mot[];
   traduction: Record<Langue, string>;
-  // Départ ("mm:ss") de chaque mot dans le clip audio du verset (Al-Hussary),
-  // un par mot dans `mots`, calé à l'oreille. Absent tant que la sourate n'a
-  // pas d'audio découpé.
+  // Départ ("mm:ss") de chaque mot dans le clip audio du verset, calé à l'oreille ; absent tant que la sourate n'a pas d'audio.
   audio?: string[];
 };
 

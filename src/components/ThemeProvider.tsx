@@ -26,8 +26,7 @@ function sabonner(notifier: () => void) {
   return () => ecouteurs.delete(notifier);
 }
 
-// Toujours "clair" côté serveur (pas de localStorage) : évite un mismatch
-// d'hydratation, le vrai thème mémorisé est repris juste après.
+// Toujours "clair" côté serveur pour éviter un mismatch d'hydratation, le vrai thème est repris juste après.
 function getServerSnapshot(): Theme {
   return "clair";
 }
@@ -39,8 +38,7 @@ type ThemeContexte = {
 
 const ThemeContext = createContext<ThemeContexte | null>(null);
 
-// Thème clair/sombre, mémorisé en local. Pilote data-bs-theme sur <html>
-// pour réutiliser directement les variables de couleur de Bootstrap.
+// Thème clair/sombre mémorisé en local, pilote data-bs-theme sur <html> pour réutiliser les couleurs Bootstrap.
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const theme = useSyncExternalStore(sabonner, lireTheme, getServerSnapshot);
 

@@ -38,7 +38,7 @@ export const versets: Verset[] = [
       en: "In the name of Allah, most benevolent, ever-merciful.",
       es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
     },
-    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.9"],
+    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.7"],
   },
   {
     numero: 1,

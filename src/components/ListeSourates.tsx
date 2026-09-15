@@ -5,7 +5,7 @@ import { urlPourLangue } from "@/conf/locale";
 
 export default function ListeSourates({ sourates, langue }: { sourates: Sourate[]; langue: Langue }) {
   return (
-    <ul className="list-unstyled">
+    <ul className="list-unstyled sommaire-liste">
       {sourates.map((sourate) =>
         sourate.disponible ? (
           <li key={sourate.id} className="mb-2">

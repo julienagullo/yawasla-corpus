@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useRef, useState, type ReactNode } from "react";
 import type { Verset } from "@/conf/types";
 import { urlAudioVerset, parseMinutage } from "@/conf/audio";
 
@@ -15,6 +15,8 @@ type LectureAudioContexte = {
   jouer: (dossier: string, versets: Verset[], depart?: number) => void;
   basculerLecture: (dossier: string, versets: Verset[]) => void;
   arreter: () => void;
+  // Appelé par Infobulle à chaque changement de visibilité, pour ne pas faire défiler la page tant qu'une infobulle est ouverte.
+  signalerInfobulleVisible: (visible: boolean) => void;
 };
 
 const LectureAudioContext = createContext<LectureAudioContexte | null>(null);
@@ -25,6 +27,11 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
   const dossierRef = useRef<string | null>(null);
   const versetIndexRef = useRef(0);
   const motActifRef = useRef<MotActif | null>(null);
+  const infobulleVisibleRef = useRef(false);
+
+  const signalerInfobulleVisible = useCallback((visible: boolean) => {
+    infobulleVisibleRef.current = visible;
+  }, []);
 
   const [dossier, setDossier] = useState<string | null>(null);
   const [etat, setEtat] = useState<Etat>("arret");
@@ -47,6 +54,7 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
   }
 
   function scrollVersVerset(numero: number) {
+    if (infobulleVisibleRef.current) return; // n'arrache pas l'utilisateur au mot qu'il regarde
     const el = document.getElementById(`verset-${numero}`);
     if (!el) return;
     const y = el.getBoundingClientRect().top + window.scrollY - hauteurBarreNavigation();
@@ -135,7 +143,9 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
   }
 
   return (
-    <LectureAudioContext.Provider value={{ dossier, etat, motActif, jouer, basculerLecture, arreter }}>
+    <LectureAudioContext.Provider
+      value={{ dossier, etat, motActif, jouer, basculerLecture, arreter, signalerInfobulleVisible }}
+    >
       <audio ref={audioRef} onEnded={versetSuivant} onTimeUpdate={surTimeUpdate} />
       {children}
     </LectureAudioContext.Provider>
