@@ -327,6 +327,21 @@ body {
   font-size: 1em;
 }
 
+/* Séparateur entre le titre de la sourate et les versets (page sourate). */
+.separateur-ornemental {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 768px) {
+  .separateur-ornemental {
+    max-width: 40rem;
+  }
+}
+
 .cadre-ornemental {
   --or-exterieur: #e7c57c;
   --or-interieur: #e19b00;
