@@ -112,7 +112,7 @@ export const versets: Verset[] = [
       en: "Most beneficent, ever-merciful,",
       es: "el Clementísimo con toda la Creación, el Misericordiosísimo con los creyentes,",
     },
-    audio: ["00:00.0", "00:1.4"],
+    audio: ["00:00.0", "00:01.4"],
   },
   {
     numero: 4,

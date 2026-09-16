@@ -1,6 +1,7 @@
 import { sourates } from "@/data/summary";
 import type { Langue } from "@/conf/types";
 import ListeSourates from "@/components/ListeSourates";
+import CadreOrnemental from "@/components/CadreOrnemental";
 
 export default function PageAccueil({ langue }: { langue: Langue }) {
   return (
@@ -9,7 +10,9 @@ export default function PageAccueil({ langue }: { langue: Langue }) {
         القرآن الكريم
       </h1>
       <h2 className="h5 mb-4">Yawasla Corpus</h2>
-      <ListeSourates sourates={sourates} langue={langue} />
+      <CadreOrnemental>
+        <ListeSourates sourates={sourates} langue={langue} />
+      </CadreOrnemental>
     </main>
   );
 }

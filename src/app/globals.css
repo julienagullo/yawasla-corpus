@@ -1,34 +1,20 @@
-/* Bootstrap est importé en JS dans layout.tsx (import "bootstrap/dist/css/bootstrap.min.css").
-   Ici : uniquement nos ajustements/styles custom qui ne sont pas couverts par Bootstrap. */
-
 body {
   background: var(--bs-body-bg);
   color: var(--bs-body-color);
-  /* Place pour la barre de navigation fixe en bas (voir .barre-navigation). */
   padding-bottom: 3.5rem;
 }
 
-/* Sous 576px (breakpoint Bootstrap "sm", déjà celui qui masque le titre de
-   la barre via d-none d-sm-block) : les boutons de la barre ne tiennent
-   plus sur une ligne, on réserve donc la hauteur des 2 lignes qu'elle prend
-   alors (voir .barre-navigation plus bas). */
 @media (max-width: 575.98px) {
   body {
     padding-bottom: 6rem;
   }
 }
 
-/* Titre arabe (accueil + page sourate) : même police que le texte des
-   versets (Amiri), en texte classique plutôt qu'en image de calligraphie. */
 .titre-accueil {
   font-family: var(--font-amiri);
   font-size: clamp(4rem, 8vw, 3.5rem);
 }
 
-/* Sommaire (accueil) : liste des 114 sourates. En dessous de 576px (mobile),
-   1 seule colonne ; au-dessus, 2 colonnes de 57 sourates chacune, remplies
-   dans l'ordre (1-57 à gauche, 58-114 à droite), sans jamais couper une
-   sourate entre 2 colonnes. */
 @media (min-width: 576px) {
   .sommaire-liste {
     columns: 2;
@@ -40,8 +26,6 @@ body {
   }
 }
 
-/* Barre globale fixe en bas : sommaire + langue à gauche, sourate en cours
-   au centre, précédent/suivant à droite. */
 .barre-navigation {
   position: fixed;
   bottom: 0;
@@ -64,12 +48,6 @@ body {
   flex: 0 0 auto;
 }
 
-/* Sous 576px, le titre disparaît déjà (d-none d-sm-block) et les 2 groupes
-   de boutons ne tiennent plus sur une seule ligne (voir signalement :
-   "plus ça rétrécit plus les boutons disparaissent à droite" — ils
-   débordaient hors écran, rien ne les faisait rétrécir ni passer à la
-   ligne). On passe alors sur 2 lignes nettes, chacune centrée : bloc gauche
-   en haut, bloc droite en dessous. */
 @media (max-width: 575.98px) {
   .barre-navigation {
     flex-wrap: wrap;
@@ -109,13 +87,6 @@ body {
   pointer-events: none;
 }
 
-/* Switch translittération : icône + interrupteur iOS (Bootstrap form-switch),
-   alignés comme les autres boutons de la barre. Bootstrap réserve l'espace
-   du switch via un padding-left sur .form-check puis ramène l'input dedans
-   avec un margin-left négatif (pensé pour un label Bootstrap classique,
-   absent ici) : sans label à aligner, ça laisse juste un espace fantôme à
-   droite du switch (visible en survolant l'input dans l'inspecteur) — on
-   neutralise les deux côtés de cette mécanique plutôt que de la garder. */
 .barre-navigation__switch {
   display: flex;
   align-items: center;
@@ -134,13 +105,11 @@ body {
   margin-left: 0;
 }
 
-/* Vert au lieu du bleu Bootstrap par défaut quand le switch est activé. */
 .barre-navigation__switch .form-check-input:checked {
   background-color: var(--bs-success);
   border-color: var(--bs-success);
 }
 
-/* Menu de langue : s'ouvre vers le haut, la barre étant fixée en bas. */
 .menu-langue {
   position: relative;
   display: inline-block;
@@ -160,11 +129,6 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-/* Même correctif que .menu-info__panneau : sous 576px, le bouton "globe"
-   n'est pas collé au bord gauche de l'écran (boutons centrés), donc ce menu
-   ancré à `left: 0` par rapport au bouton pouvait déborder. Ancré à l'écran
-   et centré (au lieu d'étiré comme .menu-info__panneau, sa liste de langues
-   reste volontairement compacte plutôt que pleine largeur). */
 @media (max-width: 575.98px) {
   .menu-langue__liste {
     position: fixed;
@@ -196,8 +160,6 @@ body {
   color: var(--bs-body-color);
 }
 
-/* Popup "i" (récitateur + sources) : même mécanique que .menu-langue, panneau
-   texte plus large plutôt qu'une liste d'options. */
 .menu-info {
   position: relative;
   display: inline-block;
@@ -218,11 +180,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* Sous 576px, le bouton "i" n'est pas collé au bord gauche de l'écran (les
-   boutons sont centrés, voir .barre-navigation) : ancré à `left: 0` par
-   rapport au bouton, le panneau débordait donc à droite de l'écran, coupé,
-   illisible. On l'ancre à la place à l'écran lui-même (marges fixes de
-   chaque côté), au-dessus de la barre (2 lignes sous ce breakpoint). */
 @media (max-width: 575.98px) {
   .menu-info__panneau {
     position: fixed;
@@ -247,14 +204,11 @@ body {
   margin-bottom: 0;
 }
 
-/* Un bloc par verset : texte arabe centré, traduction littéraire en dessous. */
 .verset {
   margin-bottom: 2.5rem;
   text-align: center;
 }
 
-/* Texte arabe : police dédiée (Amiri, style naskh) + taille confortable à lire,
-   responsive sans avoir besoin d'un breakpoint dédié. Centré sur le verset. */
 .arabic-text {
   font-family: var(--font-amiri);
   font-size: clamp(1.75rem, 5vw, 3rem);
@@ -265,7 +219,6 @@ body {
   align-items: baseline;
 }
 
-/* Traduction littéraire (officielle) du verset, sous le texte arabe. */
 .traduction-litterale {
   color: var(--bs-secondary-color, #6c757d);
   font-style: italic;
@@ -273,12 +226,6 @@ body {
   margin: 0.5rem auto 0;
 }
 
-/* Mot survolable/tapable : transition douce vers le vert (Bootstrap n'a pas
-   d'utilitaire "transition-colors" comme Tailwind). Sélection de texte et
-   callout (menu copier/sélectionner) désactivés : sans ça, un doigt posé
-   sans bouger sur un mot déclenche la sélection native au lieu de
-   l'infobulle, et le tap ne produit alors plus de `click` (donc plus rien
-   ne s'ouvre au premier essai — voir Mot.tsx/Infobulle.tsx). */
 .mot {
   position: relative;
   transition: color 0.2s ease-out;
@@ -293,12 +240,10 @@ body {
   color: var(--bs-success);
 }
 
-/* Mot en cours de récitation (lecture audio) : même vert que le survol/tap. */
 .mot--recitation {
   color: var(--bs-success);
 }
 
-/* Lien vers une sourate dans le sommaire : même survol (vert) que les mots. */
 .sourate-lien {
   color: var(--bs-body-color);
   transition: color 0.2s ease-out;
@@ -308,12 +253,10 @@ body {
   color: var(--bs-success);
 }
 
-/* Numéro de verset cliquable (démarre/saute la lecture audio à ce verset) :
-   reset du <button>, même survol vert que les mots/liens.
-   "(n)" et l'icône play se superposent dans la même cellule de grille (au
-   lieu d'un simple display:none/inline) : le bouton garde ainsi toujours la
-   largeur de son contenu le plus large et ne décale pas le texte autour
-   quand l'un cède la place à l'autre. */
+.sourate-indisponible {
+  opacity: 0.35;
+}
+
 .numero-verset {
   border: none;
   background: none;
@@ -338,9 +281,6 @@ body {
   visibility: hidden;
 }
 
-/* Au survol, le "(n)" cède la place à une icône play. Même bascule quand
-   l'infobulle d'un mot de ce verset est ouverte (--actif) : au tactile, sans
-   survol, c'est le seul indice que ce bouton joue le verset. */
 .numero-verset:hover .numero-verset__numero,
 .numero-verset--actif .numero-verset__numero {
   visibility: hidden;
@@ -353,7 +293,7 @@ body {
 
 .mot-infobulle {
   width: max-content;
-  max-width: 220px; /* doit correspondre à LARGEUR_MAX_INFOBULLE dans Infobulle.tsx */
+  max-width: 220px;
   background: #212529;
   color: #ffffff;
   opacity: 0;
@@ -361,8 +301,6 @@ body {
   pointer-events: none;
 }
 
-/* En mode sombre, un tooltip sombre se fond dans le fond de page : on
-   inverse ses couleurs pour qu'il reste contrasté et bien visible. */
 [data-bs-theme="dark"] .mot-infobulle {
   background: #f8f9fa;
   color: #171717;
@@ -387,4 +325,64 @@ body {
 
 .mot-infobulle span {
   font-size: 1em;
+}
+
+.cadre-ornemental {
+  --or-exterieur: #e7c57c;
+  --or-interieur: #e19b00;
+  --coin-taille: 2.5rem;
+  position: relative;
+  max-width: 50rem;
+  margin: 2rem auto 0;
+  padding: 0.45rem;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--or-exterieur), var(--or-exterieur)),
+    linear-gradient(var(--or-exterieur), var(--or-exterieur)), linear-gradient(var(--or-exterieur), var(--or-exterieur)),
+    linear-gradient(var(--or-exterieur), var(--or-exterieur));
+  background-size: calc(100% - 2 * var(--coin-taille)) 2.5px, calc(100% - 2 * var(--coin-taille)) 2.5px,
+  2.5px calc(100% - 2 * var(--coin-taille)), 2.5px calc(100% - 2 * var(--coin-taille));
+  background-position: var(--coin-taille) 0, var(--coin-taille) 100%, 0 var(--coin-taille), 100% var(--coin-taille);
+}
+
+.cadre-ornemental__interieur {
+  --coin-taille-interieur: calc(2.5rem - 0.5rem);
+  padding: 1.5rem;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--or-interieur), var(--or-interieur)),
+    linear-gradient(var(--or-interieur), var(--or-interieur)), linear-gradient(var(--or-interieur), var(--or-interieur)),
+    linear-gradient(var(--or-interieur), var(--or-interieur));
+  background-size: calc(100% - 2 * var(--coin-taille-interieur)) 2.5px, calc(100% - 2 * var(--coin-taille-interieur)) 2.5px,
+  2.5px calc(100% - 2 * var(--coin-taille-interieur)), 2.5px calc(100% - 2 * var(--coin-taille-interieur));
+  background-position: var(--coin-taille-interieur) 0, var(--coin-taille-interieur) 100%, 0 var(--coin-taille-interieur),
+    100% var(--coin-taille-interieur);
+}
+
+.cadre-ornemental__coin {
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  pointer-events: none;
+}
+
+.cadre-ornemental__coin--hg {
+  top: 0;
+  left: 0;
+}
+
+.cadre-ornemental__coin--hd {
+  top: 0;
+  right: 0;
+  transform: rotate(90deg);
+}
+
+.cadre-ornemental__coin--bd {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.cadre-ornemental__coin--bg {
+  bottom: 0;
+  left: 0;
+  transform: rotate(270deg);
 }

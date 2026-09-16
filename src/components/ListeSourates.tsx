@@ -18,7 +18,7 @@ export default function ListeSourates({ sourates, langue }: { sourates: Sourate[
             </Link>
           </li>
         ) : (
-          <li key={sourate.id} className="mb-2 text-muted">
+          <li key={sourate.id} className="mb-2 sourate-indisponible">
             <span aria-disabled="true">
               <span className="me-2">{sourate.id}.</span>
               {titreSourate(sourate, langue)}
