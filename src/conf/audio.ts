@@ -1,5 +1,11 @@
 // Un seul récitateur (Al-Hussary) ; dossier "assets/audio/<id>-<slug>", un mp3 par verset.
-const DOSSIERS_AVEC_AUDIO = new Set(["001-al-fatiha", "114-an-nas"]);
+const DOSSIERS_AVEC_AUDIO = new Set([
+  "001-al-fatiha",
+  "114-an-nas",
+  "113-al-falaq",
+  "112-al-ikhlas",
+  "111-al-masad",
+]);
 
 export function aAudio(dossier: string): boolean {
   return DOSSIERS_AVEC_AUDIO.has(dossier);

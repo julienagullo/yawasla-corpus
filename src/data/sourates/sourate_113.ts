@@ -1,0 +1,308 @@
+import type { Verset } from "@/conf/types";
+
+export const versets: Verset[] = [
+  {
+    numero: 0,
+    mots: [
+      {
+        texte: "بِسْمِ",
+        transliteration: "Bismi",
+        traduction: { fr: "Au nom de", en: "In the name of", es: "En el nombre de" },
+        grammaire: {
+          fr: "préposition « bi » + nom commun (m.) sing.",
+          en: "preposition « bi » + common noun (m.) sing.",
+          es: "preposición « bi » + nombre común (m.) sing.",
+        },
+      },
+      {
+        texte: "اللَّهِ",
+        transliteration: "Allahi",
+        traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
+        grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },
+      },
+      {
+        texte: "الرَّحْمَـٰنِ",
+        transliteration: "Ar-Rahmani",
+        traduction: { fr: "le Tout Miséricordieux", en: "most benevolent", es: "el Clementísimo" },
+        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+      },
+      {
+        texte: "الرَّحِيمِ",
+        transliteration: "Ar-Rahimi",
+        traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo" },
+        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+      },
+    ],
+    traduction: {
+      fr: "Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.",
+      en: "In the name of Allah, most benevolent, ever-merciful.",
+      es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
+    },
+    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.7"],
+  },
+  {
+    numero: 1,
+    mots: [
+      {
+        texte: "قُلْ",
+        transliteration: "Qul",
+        traduction: { fr: "Dis", en: "Say", es: "Di" },
+        grammaire: {
+          fr: "verbe (v.) impératif, 2e pers. m. sing.",
+          en: "verb (v.) imperative, 2nd pers. m. sing.",
+          es: "verbo (v.) imperativo, 2ª pers. m. sing.",
+        },
+      },
+      {
+        texte: "أَعُوذُ",
+        transliteration: "A'udhu",
+        traduction: { fr: "je cherche protection", en: "I seek refuge", es: "me refugio" },
+        grammaire: {
+          fr: "verbe (v.) inaccompli, 1re pers. sing.",
+          en: "verb (v.) imperfect, 1st pers. sing.",
+          es: "verbo (v.) imperfectivo, 1ª pers. sing.",
+        },
+      },
+      {
+        texte: "بِرَبِّ",
+        transliteration: "Bi rabbi",
+        traduction: { fr: "auprès du Seigneur", en: "with the Lord", es: "en el Señor" },
+        grammaire: {
+          fr: "préposition « bi » + nom commun (m.) sing. (état construit)",
+          en: "preposition « bi » + common noun (m.) sing. (construct state)",
+          es: "preposición « bi » + nombre común (m.) sing. (estado constructo)",
+        },
+      },
+      {
+        texte: "الْفَلَقِ",
+        transliteration: "Al-Falaqi",
+        traduction: { fr: "de l'aube naissante", en: "of rising day", es: "del alba" },
+        grammaire: {
+          fr: "nom commun (m.) sing. déf., génitif",
+          en: "common noun (m.) sing. def., genitive",
+          es: "nombre común (m.) sing. def., genitivo",
+        },
+      },
+    ],
+    traduction: {
+      fr: "Dis: «Je cherche protection auprès du Seigneur de l'aube naissante,",
+      en: 'SAY: "I SEEK refuge with the Lord of rising day',
+      es: "Di: «Me refugio en el Señor del alba",
+    },
+    audio: ["00:00.0", "00:00.6", "00:01.9", "00:03.4"],
+  },
+  {
+    numero: 2,
+    mots: [
+      {
+        texte: "مِن",
+        transliteration: "Min",
+        traduction: { fr: "contre", en: "From", es: "del" },
+        grammaire: { fr: "préposition", en: "preposition", es: "preposición" },
+      },
+      {
+        texte: "شَرِّ",
+        transliteration: "Sharri",
+        traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
+        grammaire: {
+          fr: "nom commun (m.) sing. (état construit), génitif",
+          en: "common noun (m.) sing. (construct state), genitive",
+          es: "nombre común (m.) sing. (estado constructo), genitivo",
+        },
+      },
+      {
+        texte: "مَا",
+        transliteration: "Ma",
+        traduction: { fr: "ce qu'", en: "what", es: "lo que" },
+        grammaire: { fr: "pronom relatif", en: "relative pronoun", es: "pronombre relativo" },
+      },
+      {
+        texte: "خَلَقَ",
+        transliteration: "Khalaqa",
+        traduction: { fr: "Il a créé", en: "He has created", es: "Él ha creado" },
+        grammaire: {
+          fr: "verbe (v.) accompli, 3e pers. m. sing.",
+          en: "verb (v.) perfect, 3rd pers. m. sing.",
+          es: "verbo (v.) perfectivo, 3ª pers. m. sing.",
+        },
+      },
+    ],
+    traduction: {
+      fr: "contre le mal des êtres qu'Il a créés,",
+      en: "From the evil of what He has created,",
+      es: "del mal de lo que Él ha creado",
+    },
+    audio: ["00:00.0", "00:00.8", "00:02.0", "00:02.9"],
+  },
+  {
+    numero: 3,
+    mots: [
+      {
+        texte: "وَمِن",
+        transliteration: "Wa min",
+        traduction: { fr: "et contre", en: "And", es: "y del" },
+        grammaire: {
+          fr: "conjonction « wa » + préposition",
+          en: "conjunction « wa » + preposition",
+          es: "conjunción « wa » + preposición",
+        },
+      },
+      {
+        texte: "شَرِّ",
+        transliteration: "Sharri",
+        traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
+        grammaire: {
+          fr: "nom commun (m.) sing. (état construit), génitif",
+          en: "common noun (m.) sing. (construct state), genitive",
+          es: "nombre común (m.) sing. (estado constructo), genitivo",
+        },
+      },
+      {
+        texte: "غَاسِقٍ",
+        transliteration: "Ghasiqin",
+        traduction: { fr: "l'obscurité", en: "evening darkness", es: "la oscuridad" },
+        grammaire: {
+          fr: "participe actif (m.) sing. indéf., génitif (litt. « celui qui s'assombrit »)",
+          en: "active participle (m.) sing. indef., genitive (lit. “that which grows dark”)",
+          es: "participio activo (m.) sing. indef., genitivo (lit. « el que se oscurece »)",
+        },
+      },
+      {
+        texte: "إِذَا",
+        transliteration: "Idha",
+        traduction: { fr: "quand", en: "when", es: "cuando" },
+        grammaire: { fr: "particule temporelle", en: "temporal particle", es: "partícula temporal" },
+      },
+      {
+        texte: "وَقَبَ",
+        transliteration: "Waqaba",
+        traduction: { fr: "elle s'approfondit", en: "it overspreads", es: "se extiende" },
+        grammaire: {
+          fr: "verbe (v.) accompli, 3e pers. m. sing. (litt. « s'installa/pénétra »)",
+          en: "verb (v.) perfect, 3rd pers. m. sing. (lit. “settled in/spread”)",
+          es: "verbo (v.) perfectivo, 3ª pers. m. sing. (lit. « se instaló/penetró »)",
+        },
+      },
+    ],
+    traduction: {
+      fr: "contre le mal de l'obscurité quand elle s'approfondit,",
+      en: "And the evil of evening darkness when it overspreads,",
+      es: "y del mal de la oscuridad de la noche cuando se extiende",
+    },
+    audio: ["00:00.0", "00:01.2", "00:02.2", "00:04.4", "00:05.6"],
+  },
+  {
+    numero: 4,
+    mots: [
+      {
+        texte: "وَمِن",
+        transliteration: "Wa min",
+        traduction: { fr: "et contre", en: "From", es: "y del" },
+        grammaire: {
+          fr: "conjonction « wa » + préposition",
+          en: "conjunction « wa » + preposition",
+          es: "conjunción « wa » + preposición",
+        },
+      },
+      {
+        texte: "شَرِّ",
+        transliteration: "Sharri",
+        traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
+        grammaire: {
+          fr: "nom commun (m.) sing. (état construit), génitif",
+          en: "common noun (m.) sing. (construct state), genitive",
+          es: "nombre común (m.) sing. (estado constructo), genitivo",
+        },
+      },
+      {
+        texte: "النَّفَّاثَاتِ",
+        transliteration: "An-Naffathati",
+        traduction: { fr: "celles qui soufflent [les sorcières]", en: "sorceresses who blow", es: "las sopladoras" },
+        grammaire: {
+          fr: "nom/participe actif (f.) pluriel déf., génitif (litt. « celles qui soufflent »)",
+          en: "noun/active participle (f.) plural def., genitive (lit. “those [fem.] who blow”)",
+          es: "nombre/participio activo (f.) plural def., genitivo (lit. « las que soplan »)",
+        },
+      },
+      {
+        texte: "فِي",
+        transliteration: "Fi",
+        traduction: { fr: "sur", en: "on", es: "de" },
+        grammaire: { fr: "préposition", en: "preposition", es: "preposición" },
+      },
+      {
+        texte: "الْعُقَدِ",
+        transliteration: "Al-'Uqadi",
+        traduction: { fr: "les nœuds", en: "knots", es: "nudos" },
+        grammaire: {
+          fr: "nom commun (m.) pluriel déf., génitif",
+          en: "common noun (m.) plural def., genitive",
+          es: "nombre común (m.) plural def., genitivo",
+        },
+      },
+    ],
+    traduction: {
+      fr: "contre le mal de celles qui soufflent [les sorcières] sur les nœuds,",
+      en: "From the evil of sorceresses who blow incantations on knots,",
+      es: "y del mal de las sopladoras de nudos",
+    },
+    audio: ["00:00.0", "00:01.2", "00:03.0", "00:06.0", "00:06.8"],
+  },
+  {
+    numero: 5,
+    mots: [
+      {
+        texte: "وَمِن",
+        transliteration: "Wa min",
+        traduction: { fr: "et contre", en: "From", es: "y del" },
+        grammaire: {
+          fr: "conjonction « wa » + préposition",
+          en: "conjunction « wa » + preposition",
+          es: "conjunción « wa » + preposición",
+        },
+      },
+      {
+        texte: "شَرِّ",
+        transliteration: "Sharri",
+        traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
+        grammaire: {
+          fr: "nom commun (m.) sing. (état construit), génitif",
+          en: "common noun (m.) sing. (construct state), genitive",
+          es: "nombre común (m.) sing. (estado constructo), genitivo",
+        },
+      },
+      {
+        texte: "حَاسِدٍ",
+        transliteration: "Hasidin",
+        traduction: { fr: "l'envieux", en: "the envier", es: "el envidioso" },
+        grammaire: {
+          fr: "participe actif (m.) sing. indéf., génitif (litt. « celui qui envie »)",
+          en: "active participle (m.) sing. indef., genitive (lit. “the one who envies”)",
+          es: "participio activo (m.) sing. indef., genitivo (lit. « el que envidia »)",
+        },
+      },
+      {
+        texte: "إِذَا",
+        transliteration: "Idha",
+        traduction: { fr: "quand", en: "when", es: "cuando" },
+        grammaire: { fr: "particule temporelle", en: "temporal particle", es: "partícula temporal" },
+      },
+      {
+        texte: "حَسَدَ",
+        transliteration: "Hasada",
+        traduction: { fr: "il envie»", en: "he envies", es: "envidia" },
+        grammaire: {
+          fr: "verbe (v.) accompli, 3e pers. m. sing.",
+          en: "verb (v.) perfect, 3rd pers. m. sing.",
+          es: "verbo (v.) perfectivo, 3ª pers. m. sing.",
+        },
+      },
+    ],
+    traduction: {
+      fr: "et contre le mal de l'envieux quand il envie».",
+      en: "From the evil of the envier when he envies.",
+      es: "y del mal del envidioso cuando envidia.»",
+    },
+    audio: ["00:00.0", "00:01.2", "00:02.2", "00:04.2", "00:05.4"],
+  },
+];

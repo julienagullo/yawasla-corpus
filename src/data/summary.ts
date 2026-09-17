@@ -1,5 +1,8 @@
 import type { Verset, NomSourate, Langue } from "@/conf/types";
 import { versets as versetsSourate1 } from "./sourates/sourate_001";
+import { versets as versetsSourate111 } from "./sourates/sourate_111";
+import { versets as versetsSourate112 } from "./sourates/sourate_112";
+import { versets as versetsSourate113 } from "./sourates/sourate_113";
 import { versets as versetsSourate114 } from "./sourates/sourate_114";
 
 export type { Mot, Verset, Langue, NomSourate } from "@/conf/types";
@@ -14,9 +17,9 @@ export type Sourate = {
 export const sourates: Sourate[] = [
   { id: 1, slug: "al-fatiha", nom: { arabe: "الفاتحة", transliteration: "Al-Fatiha", sens: { fr: "L'Ouverture", en: "The Opening", es: "La Apertura" } }, disponible: true },
   { id: 114, slug: "an-nas", nom: { arabe: "الناس", transliteration: "An-Nas", sens: { fr: "Les Hommes", en: "Mankind", es: "Los Hombres" } }, disponible: true },
-  { id: 113, slug: "al-falaq", nom: { arabe: "الفلق", transliteration: "Al-Falaq", sens: { fr: "L'Aube naissante", en: "The Daybreak", es: "El Amanecer" } }, disponible: false },
-  { id: 112, slug: "al-ikhlas", nom: { arabe: "الإخلاص", transliteration: "Al-Ikhlas", sens: { fr: "Le Monothéisme pur", en: "The Sincerity", es: "La Sinceridad" } }, disponible: false },
-  { id: 111, slug: "al-masad", nom: { arabe: "المسد", transliteration: "Al-Masad", sens: { fr: "Les Fibres", en: "The Palm Fiber", es: "Las Fibras" } }, disponible: false },
+  { id: 113, slug: "al-falaq", nom: { arabe: "الفلق", transliteration: "Al-Falaq", sens: { fr: "L'Aube naissante", en: "The Daybreak", es: "El Amanecer" } }, disponible: true },
+  { id: 112, slug: "al-ikhlas", nom: { arabe: "الإخلاص", transliteration: "Al-Ikhlas", sens: { fr: "Le Monothéisme pur", en: "The Sincerity", es: "La Sinceridad" } }, disponible: true },
+  { id: 111, slug: "al-masad", nom: { arabe: "المسد", transliteration: "Al-Masad", sens: { fr: "Les Fibres", en: "The Palm Fiber", es: "Las Fibras" } }, disponible: true },
   { id: 110, slug: "an-nasr", nom: { arabe: "النصر", transliteration: "An-Nasr", sens: { fr: "Le Secours", en: "The Divine Support", es: "El Auxilio" } }, disponible: false },
   { id: 109, slug: "al-kafirun", nom: { arabe: "الكافرون", transliteration: "Al-Kafirun", sens: { fr: "Les Infidèles", en: "The Disbelievers", es: "Los Incrédulos" } }, disponible: false },
   { id: 108, slug: "al-kawthar", nom: { arabe: "الكوثر", transliteration: "Al-Kawthar", sens: { fr: "L'Abondance", en: "The Abundance", es: "La Abundancia" } }, disponible: false },
@@ -139,6 +142,9 @@ export function titreSourate(sourate: Sourate, langue: Langue = "fr"): string {
 
 const versetsParId: Record<number, Verset[]> = {
   1: versetsSourate1,
+  111: versetsSourate111,
+  112: versetsSourate112,
+  113: versetsSourate113,
   114: versetsSourate114,
 };
 

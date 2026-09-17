@@ -211,7 +211,7 @@ body {
 
 .arabic-text {
   font-family: var(--font-amiri);
-  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-size: clamp(2.2rem, 5vw, 3rem);
   line-height: 2.2;
   display: flex;
   flex-wrap: wrap;
