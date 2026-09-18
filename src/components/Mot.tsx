@@ -45,7 +45,9 @@ export default function Mot({
   return (
     <span
       ref={ref}
-      className={`mot mx-1 ${actif ? "mot--actif" : ""} ${enLecture ? "mot--recitation" : ""}`}
+      className={`mot mx-1 ${actif ? "mot--actif" : ""} ${enLecture ? "mot--recitation" : ""} ${
+        mot.couleur && !actif && !enLecture ? `mot--${mot.couleur}` : ""
+      }`}
       onMouseEnter={ouvrir}
       onMouseLeave={programmerFermeture}
       onClick={ouvrir}

@@ -244,6 +244,10 @@ body {
   color: var(--bs-success);
 }
 
+.mot--or {
+  color: #e19b00;
+}
+
 .sourate-lien {
   color: var(--bs-body-color);
   transition: color 0.2s ease-out;

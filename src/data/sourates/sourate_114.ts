@@ -16,6 +16,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "اللَّهِ",
+        couleur: "or",
         transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
         grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },

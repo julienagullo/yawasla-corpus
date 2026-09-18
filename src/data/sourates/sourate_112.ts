@@ -16,6 +16,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "اللَّهِ",
+        couleur: "or",
         transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
         grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },
@@ -65,6 +66,7 @@ export const versets: Verset[] = [
       },
       {
         texte: "اللَّهُ",
+        couleur: "or",
         transliteration: "Allahu",
         traduction: { fr: "est Allah", en: "is Allah", es: "es Dios" },
         grammaire: {
@@ -96,6 +98,7 @@ export const versets: Verset[] = [
     mots: [
       {
         texte: "اللَّهُ",
+        couleur: "or",
         transliteration: "Allahu",
         traduction: { fr: "Allah", en: "God", es: "Dios" },
         grammaire: {

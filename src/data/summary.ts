@@ -1,5 +1,6 @@
 import type { Verset, NomSourate, Langue } from "@/conf/types";
 import { versets as versetsSourate1 } from "./sourates/sourate_001";
+import { versets as versetsSourate110 } from "./sourates/sourate_110";
 import { versets as versetsSourate111 } from "./sourates/sourate_111";
 import { versets as versetsSourate112 } from "./sourates/sourate_112";
 import { versets as versetsSourate113 } from "./sourates/sourate_113";
@@ -20,7 +21,7 @@ export const sourates: Sourate[] = [
   { id: 113, slug: "al-falaq", nom: { arabe: "الفلق", transliteration: "Al-Falaq", sens: { fr: "L'Aube naissante", en: "The Daybreak", es: "El Amanecer" } }, disponible: true },
   { id: 112, slug: "al-ikhlas", nom: { arabe: "الإخلاص", transliteration: "Al-Ikhlas", sens: { fr: "Le Monothéisme pur", en: "The Sincerity", es: "La Sinceridad" } }, disponible: true },
   { id: 111, slug: "al-masad", nom: { arabe: "المسد", transliteration: "Al-Masad", sens: { fr: "Les Fibres", en: "The Palm Fiber", es: "Las Fibras" } }, disponible: true },
-  { id: 110, slug: "an-nasr", nom: { arabe: "النصر", transliteration: "An-Nasr", sens: { fr: "Le Secours", en: "The Divine Support", es: "El Auxilio" } }, disponible: false },
+  { id: 110, slug: "an-nasr", nom: { arabe: "النصر", transliteration: "An-Nasr", sens: { fr: "Le Secours", en: "The Divine Support", es: "El Auxilio" } }, disponible: true },
   { id: 109, slug: "al-kafirun", nom: { arabe: "الكافرون", transliteration: "Al-Kafirun", sens: { fr: "Les Infidèles", en: "The Disbelievers", es: "Los Incrédulos" } }, disponible: false },
   { id: 108, slug: "al-kawthar", nom: { arabe: "الكوثر", transliteration: "Al-Kawthar", sens: { fr: "L'Abondance", en: "The Abundance", es: "La Abundancia" } }, disponible: false },
   { id: 107, slug: "al-maun", nom: { arabe: "الماعون", transliteration: "Al-Ma'un", sens: { fr: "L'Ustensile", en: "The Small Kindnesses", es: "La Ayuda" } }, disponible: false },
@@ -142,6 +143,7 @@ export function titreSourate(sourate: Sourate, langue: Langue = "fr"): string {
 
 const versetsParId: Record<number, Verset[]> = {
   1: versetsSourate1,
+  110: versetsSourate110,
   111: versetsSourate111,
   112: versetsSourate112,
   113: versetsSourate113,

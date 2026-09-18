@@ -5,6 +5,8 @@ export type Mot = {
   transliteration: string;
   traduction: Record<Langue, string>;
   grammaire: Record<Langue, string>;
+  // Clé de style mappée à une classe CSS "mot--<couleur>" dans globals.css (ex. "or" pour Allah) ; omis ou vide = style par défaut.
+  couleur?: string;
 };
 
 export type Verset = {

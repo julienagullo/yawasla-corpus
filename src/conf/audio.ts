@@ -5,6 +5,7 @@ const DOSSIERS_AVEC_AUDIO = new Set([
   "113-al-falaq",
   "112-al-ikhlas",
   "111-al-masad",
+  "110-an-nasr",
 ]);
 
 export function aAudio(dossier: string): boolean {
