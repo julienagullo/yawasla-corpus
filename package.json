@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "build:mamp": "NEXT_BASE_PATH=/corpus next build",
+    "build": "next build && npm run clean:ds",
+    "build:mamp": "NEXT_BASE_PATH=/corpus next build && npm run clean:ds",
+    "clean:ds": "find build -name .DS_Store -delete",
     "start": "next start",
     "lint": "eslint"
   },
