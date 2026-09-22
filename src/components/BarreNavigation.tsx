@@ -64,7 +64,12 @@ export default function BarreNavigation() {
       </div>
 
       <div className="barre-navigation__titre d-none d-sm-block">
-        {sourateActuelle ? titreSourate(sourateActuelle, langue) : null}
+        {sourateActuelle ? (
+          <>
+            <span className="text-muted me-2">{sourateActuelle.id}.</span>
+            {titreSourate(sourateActuelle, langue)}
+          </>
+        ) : null}
       </div>
 
       <div className="barre-navigation__groupe">

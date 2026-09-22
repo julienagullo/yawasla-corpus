@@ -271,17 +271,17 @@ export const versets: Verset[] = [
       {
         texte: "الْجِنَّةِ",
         transliteration: "Al-Jinnati",
-        traduction: { fr: "un djinn,", en: "the jinns", es: "los genios" },
+        traduction: { fr: "les djinns,", en: "the jinns", es: "los genios" },
         grammaire: {
-          fr: "nom commun (f.) sing. déf., génitif (litt. « les djinns »)",
-          en: "common noun (f.) sing. def., genitive (lit. “the jinn”)",
-          es: "nombre común (f.) sing. def., genitivo (lit. « los genios »)",
+          fr: "nom collectif (f.) sing. déf., génitif (litt. « les djinns »)",
+          en: "collective noun (f.) sing. def., genitive (lit. “the jinn”)",
+          es: "nombre colectivo (f.) sing. def., genitivo (lit. « los genios »)",
         },
       },
       {
         texte: "وَالنَّاسِ",
         transliteration: "Wa an-Nasi",
-        traduction: { fr: "ou un être humain».", en: "and men.", es: "y de los seres humanos.»" },
+        traduction: { fr: "ou des hommes».", en: "and men.", es: "y de los seres humanos.»" },
         grammaire: {
           fr: "conjonction « wa » + nom commun (m.) pluriel déf., génitif",
           en: "conjunction « wa » + common noun (m.) plural def., genitive",
