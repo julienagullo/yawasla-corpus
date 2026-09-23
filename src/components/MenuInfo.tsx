@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { LIBELLES } from "@/conf/libelles";
-import { RECITATEUR, SOURCES, GITHUB_URL } from "@/conf/license";
+import { NOMS_RECITATEURS, SOURCES, GITHUB_URL } from "@/conf/license";
+import { TOUS_RECITATEURS } from "@/conf/audio";
 import type { Langue } from "@/conf/types";
 
 const DELAI_FERMETURE_MS = 300;
@@ -64,7 +65,8 @@ export default function MenuInfo({ langue }: { langue: Langue }) {
         <div className="menu-info__panneau" role="dialog" aria-label={libelles.sourcesTitre}>
           <p className="menu-info__titre">{libelles.sourcesTitre}</p>
           <p className="menu-info__ligne">
-            <strong>{libelles.recitateur}</strong> : {RECITATEUR}
+            <strong>{libelles.recitateur}</strong> :{" "}
+            {TOUS_RECITATEURS.map((r) => NOMS_RECITATEURS[r][langue]).join(", ")}
           </p>
           {SOURCES.map((source) => (
             <p className="menu-info__ligne" key={source.nom}>

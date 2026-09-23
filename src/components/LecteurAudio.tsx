@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useLectureAudio } from "@/components/LectureAudioProvider";
+import { useRecitateur } from "@/components/RecitateurProvider";
 import { LIBELLES } from "@/conf/libelles";
 import type { Langue, Verset } from "@/conf/types";
 
@@ -23,25 +24,33 @@ export default function LecteurAudio({
   versets: Verset[];
   langue: Langue;
 }) {
-  const { dossier: dossierActif, etat, basculerLecture, arreter } = useLectureAudio();
+  const { recitateur: recitateurActif, dossier: dossierActif, etat, basculerLecture, arreter } = useLectureAudio();
+  const { recitateur } = useRecitateur();
   const libelles = LIBELLES[langue];
-  const actif = dossierActif === dossier;
+  const actif = recitateurActif === recitateur && dossierActif === dossier;
   const enLecture = actif && etat === "lecture";
 
   function basculer() {
-    basculerLecture(dossier, versets);
+    basculerLecture(recitateur, dossier, versets);
   }
 
   // Lu via une ref pour n'attacher l'écouteur qu'une seule fois malgré le changement de référence de `basculer` à chaque rendu.
   const basculerRef = useRef(basculer);
+  const arreterRef = useRef(arreter);
   useEffect(() => {
     basculerRef.current = basculer;
+    arreterRef.current = arreter;
   });
 
-  // Espace = play/pause, sauf si le focus est sur un champ de saisie.
+  // Espace = play/pause, sauf si le focus est sur un champ de saisie ; Échap = arrêt.
   useEffect(() => {
     function surTouche(e: KeyboardEvent) {
-      if (e.code !== "Space" || e.repeat) return;
+      if (e.repeat) return;
+      if (e.key === "Escape") {
+        arreterRef.current();
+        return;
+      }
+      if (e.code !== "Space") return;
       const cible = e.target as HTMLElement | null;
       if (cible && BALISES_INTERACTIVES.has(cible.tagName)) return;
       e.preventDefault();

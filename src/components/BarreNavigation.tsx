@@ -9,6 +9,7 @@ import { LIBELLES } from "@/conf/libelles";
 import { aAudio } from "@/conf/audio";
 import { useTheme } from "@/components/ThemeProvider";
 import { useTransliteration } from "@/components/TransliterationProvider";
+import { useRecitateur } from "@/components/RecitateurProvider";
 import MenuLangue from "@/components/MenuLangue";
 import MenuInfo from "@/components/MenuInfo";
 import LecteurAudio from "@/components/LecteurAudio";
@@ -20,12 +21,14 @@ export default function BarreNavigation() {
   const libelles = LIBELLES[langue];
   const { theme, basculerTheme } = useTheme();
 
-  // Le layout racine ne connaît pas le segment [locale] au rendu serveur : on corrige lang sur <html> ici une fois la langue connue via l'URL.
+  // Le layout racine ne connaît pas le segment [locale] au rendu serveur : on corrige lang/dir sur <html> ici une fois la langue connue via l'URL.
   useEffect(() => {
     document.documentElement.lang = langue;
+    document.documentElement.dir = langue === "ar" ? "rtl" : "ltr";
   }, [langue]);
 
   const { afficher: afficherTransliteration, basculer: basculerTransliteration } = useTransliteration();
+  const { recitateur } = useRecitateur();
 
   const disponibles = sourates.filter((s) => s.disponible);
   const idActuel = Number(pathname.match(/^(?:\/(?:en|es))?\/sourate\/(\d+)\//)?.[1]);
@@ -86,7 +89,7 @@ export default function BarreNavigation() {
             />
           </span>
         </label>
-        {sourateActuelle && dossierAudio && aAudio(dossierAudio) && (
+        {sourateActuelle && dossierAudio && aAudio(recitateur, dossierAudio) && (
           <LecteurAudio dossier={dossierAudio} versets={getVersets(sourateActuelle.id)} langue={langue} />
         )}
         {precedente ? (

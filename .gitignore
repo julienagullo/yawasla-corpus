@@ -14,7 +14,8 @@
 /coverage
 
 # audio
-/sources/audio
+/sources/al-houdaifi
+/sources/al-hussary
 
 # next.js
 /.next/

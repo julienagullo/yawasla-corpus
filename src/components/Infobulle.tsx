@@ -199,7 +199,8 @@ export default function Infobulle({
         {children}
         {motActif && position && (
           <span
-            dir="ltr"
+            dir={langue === "ar" ? "rtl" : "ltr"}
+            lang={langue}
             className={`mot-infobulle position-absolute text-start rounded-3 shadow px-3 py-2 ${
               visible ? "mot-infobulle--visible" : ""
             }`}
@@ -212,8 +213,13 @@ export default function Infobulle({
             {afficherTransliteration && (
               <span className="mot-infobulle__grammaire d-block small fst-italic">{motActif.transliteration}</span>
             )}
-            <span className="d-block fw-semibold">{motActif.traduction[langue]}</span>
-            <span className="mot-infobulle__grammaire d-block small mt-1">{motActif.grammaire[langue]}</span>
+            {/* En arabe le mot est déjà dans sa langue : pas de traduction, seule l'analyse grammaticale a du sens. */}
+            {langue !== "ar" && <span className="d-block fw-semibold">{motActif.traduction[langue]}</span>}
+            <span
+              className={`d-block ${langue === "ar" ? "fw-semibold" : "mot-infobulle__grammaire small mt-1"}`}
+            >
+              {motActif.grammaire[langue]}
+            </span>
           </span>
         )}
       </div>

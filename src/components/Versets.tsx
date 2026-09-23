@@ -17,13 +17,16 @@ export default function Versets({
         <div className="verset" id={`verset-${verset.numero}`} key={verset.numero}>
           <div className="arabic-text">
             {verset.mots.map((mot, i) => (
-              <Mot key={i} mot={mot} dossier={dossier} verset={verset.numero} index={i} />
+              <Mot key={i} mot={mot} dossier={dossier} verset={verset.numero} index={i} versets={versets} />
             ))}
             <NumeroVerset numero={verset.numero} dossier={dossier} versets={versets} langue={langue} />
           </div>
-          <p className="traduction-litterale" dir="ltr">
-            {verset.traduction[langue]}
-          </p>
+          {/* En arabe le verset est déjà dans sa langue : pas de traduction littérale à afficher. */}
+          {langue !== "ar" && (
+            <p className="traduction-litterale" dir="ltr">
+              {verset.traduction[langue]}
+            </p>
+          )}
         </div>
       ))}
     </div>

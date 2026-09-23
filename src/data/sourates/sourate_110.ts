@@ -12,6 +12,7 @@ export const versets: Verset[] = [
           fr: "préposition « bi » + nom commun (m.) sing.",
           en: "preposition « bi » + common noun (m.) sing.",
           es: "preposición « bi » + nombre común (m.) sing.",
+          ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
       {
@@ -19,19 +20,34 @@ export const versets: Verset[] = [
         couleur: "or",
         transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
-        grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },
+        grammaire: {
+          fr: "nom propre (m.) sing.",
+          en: "proper noun (m.) sing.",
+          es: "nombre propio (m.) sing.",
+          ar: "اسم علم، مجرور",
+        },
       },
       {
         texte: "الرَّحْمَـٰنِ",
         transliteration: "Ar-Rahmani",
         traduction: { fr: "le Tout Miséricordieux", en: "most benevolent", es: "el Clementísimo" },
-        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+        grammaire: {
+          fr: "adjectif (m.) sing. déf.",
+          en: "adjective (m.) sing. def.",
+          es: "adjetivo (m.) sing. def.",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
+        },
       },
       {
         texte: "الرَّحِيمِ",
         transliteration: "Ar-Rahimi",
         traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo" },
-        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+        grammaire: {
+          fr: "adjectif (m.) sing. déf.",
+          en: "adjective (m.) sing. def.",
+          es: "adjetivo (m.) sing. def.",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
+        },
       },
     ],
     traduction: {
@@ -39,7 +55,7 @@ export const versets: Verset[] = [
       en: "In the name of Allah, most benevolent, ever-merciful.",
       es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
     },
-    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.7"],
+    audio: { "al-hussary": ["00:00.0", "00:01.0", "00:01.6", "00:02.7"] },
   },
   {
     numero: 1,
@@ -48,7 +64,12 @@ export const versets: Verset[] = [
         texte: "إِذَا",
         transliteration: "Idha",
         traduction: { fr: "Lorsque", en: "WHEN", es: "Cuando" },
-        grammaire: { fr: "particule temporelle", en: "temporal particle", es: "partícula temporal" },
+        grammaire: {
+          fr: "particule temporelle",
+          en: "temporal particle",
+          es: "partícula temporal",
+          ar: "ظرف زمان",
+        },
       },
       {
         texte: "جَاءَ",
@@ -58,6 +79,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) accompli, 3e pers. m. sing. (valeur de futur après « idhā »)",
           en: "verb (v.) perfect, 3rd pers. m. sing. (future value after « idhā »)",
           es: "verbo (v.) perfectivo, 3ª pers. m. sing. (valor de futuro tras « idhā »)",
+          ar: "فعل ماض، للغائب المذكر المفرد",
         },
       },
       {
@@ -68,6 +90,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) sing. (état construit), nominatif",
           en: "common noun (m.) sing. (construct state), nominative",
           es: "nombre común (m.) sing. (estado constructo), nominativo",
+          ar: "اسم (مذكر)، مرفوع",
         },
       },
       {
@@ -79,6 +102,7 @@ export const versets: Verset[] = [
           fr: "nom propre (m.) sing., génitif",
           en: "proper noun (m.) sing., genitive",
           es: "nombre propio (m.) sing., genitivo",
+          ar: "اسم علم، مجرور",
         },
       },
       {
@@ -89,6 +113,7 @@ export const versets: Verset[] = [
           fr: "conjonction « wa » + nom commun (m.) sing. déf., nominatif",
           en: "conjunction « wa » + common noun (m.) sing. def., nominative",
           es: "conjunción « wa » + nombre común (m.) sing. def., nominativo",
+          ar: "حرف عطف «وَ» + اسم (مذكر) معرفة، مرفوع",
         },
       },
     ],
@@ -97,7 +122,7 @@ export const versets: Verset[] = [
       en: "WHEN THE HELP of God arrives and victory,",
       es: "Cuando llegue el auxilio de Dios y la victoria",
     },
-    audio: ["00:00.0", "00:01.0", "00:02.8", "00:04.4", "00:05.6"],
+    audio: { "al-hussary": ["00:00.0", "00:01.0", "00:02.8", "00:04.4", "00:05.6"] },
   },
   {
     numero: 2,
@@ -110,6 +135,7 @@ export const versets: Verset[] = [
           fr: "conjonction « wa » + verbe (v.) accompli, 2e pers. m. sing. (valeur de présent après « idhā »)",
           en: "conjunction « wa » + verb (v.) perfect, 2nd pers. m. sing. (present value after « idhā »)",
           es: "conjunción « wa » + verbo (v.) perfectivo, 2ª pers. m. sing. (valor de presente tras « idhā »)",
+          ar: "حرف عطف «وَ» + فعل ماض، للمخاطب المذكر المفرد + ضمير متصل، للمخاطب المذكر المفرد",
         },
       },
       {
@@ -120,6 +146,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) plur. déf., accusatif",
           en: "common noun (m.) pl. def., accusative",
           es: "nombre común (m.) pl. def., acusativo",
+          ar: "اسم (مذكر) جمع معرفة، منصوب",
         },
       },
       {
@@ -130,13 +157,19 @@ export const versets: Verset[] = [
           fr: "verbe (v.) inaccompli, 3e pers. m. plur.",
           en: "verb (v.) imperfect, 3rd pers. m. pl.",
           es: "verbo (v.) imperfectivo, 3ª pers. m. pl.",
+          ar: "فعل مضارع، للغائبين (جمع مذكر) + ضمير متصل، للغائبين (جمع مذكر)",
         },
       },
       {
         texte: "فِي",
         transliteration: "Fi",
         traduction: { fr: "dans", en: "in", es: "en" },
-        grammaire: { fr: "préposition", en: "preposition", es: "preposición" },
+        grammaire: {
+          fr: "préposition",
+          en: "preposition",
+          es: "preposición",
+          ar: "حرف جر",
+        },
       },
       {
         texte: "دِينِ",
@@ -146,6 +179,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) sing. (état construit), génitif",
           en: "common noun (m.) sing. (construct state), genitive",
           es: "nombre común (m.) sing. (estado constructo), genitivo",
+          ar: "اسم، مجرور",
         },
       },
       {
@@ -157,6 +191,7 @@ export const versets: Verset[] = [
           fr: "nom propre (m.) sing., génitif",
           en: "proper noun (m.) sing., genitive",
           es: "nombre propio (m.) sing., genitivo",
+          ar: "اسم علم، مجرور",
         },
       },
       {
@@ -167,6 +202,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) plur. indéf., accusatif (valeur adverbiale, litt. « par troupes »)",
           en: "common noun (m.) pl. indef., accusative (adverbial value, lit. “in troops”)",
           es: "nombre común (m.) pl. indef., acusativo (valor adverbial, lit. « en tropas »)",
+          ar: "اسم جمع نكرة، منصوب",
         },
       },
     ],
@@ -175,7 +211,7 @@ export const versets: Verset[] = [
       en: "And you see men enter God's discipline horde on horde,",
       es: "y veas a los seres humanos entrando en la religión de Dios en oleadas sucesivas,",
     },
-    audio: ["00:00.0", "00:01.8", "00:03.4", "00:05.5", "00:06.4", "00:07.6", "00:09.0"],
+    audio: { "al-hussary": ["00:00.0", "00:01.8", "00:03.4", "00:05.5", "00:06.4", "00:07.6", "00:09.0"] },
   },
   {
     numero: 3,
@@ -188,6 +224,7 @@ export const versets: Verset[] = [
           fr: "particule de résultat « fa » + verbe (v.) impératif, 2e pers. m. sing.",
           en: "resultative particle « fa » + verb (v.) imperative, 2nd pers. m. sing.",
           es: "partícula de resultado « fa » + verbo (v.) imperativo, 2ª pers. m. sing.",
+          ar: "حرف واقع في جواب الشرط «فَ» + فعل أمر، للمخاطب المذكر المفرد",
         },
       },
       {
@@ -198,6 +235,7 @@ export const versets: Verset[] = [
           fr: "préposition « bi » + nom commun (m.) sing., génitif",
           en: "preposition « bi » + common noun (m.) sing., genitive",
           es: "preposición « bi » + nombre común (m.) sing., genitivo",
+          ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
       {
@@ -208,6 +246,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) sing. + pronom suffixe, 2e pers. m. sing., génitif",
           en: "common noun (m.) sing. + suffix pronoun, 2nd pers. m. sing., genitive",
           es: "nombre común (m.) sing. + sufijo pronominal, 2ª pers. m. sing., genitivo",
+          ar: "اسم (مذكر)، مجرور + ضمير متصل، للمخاطب المذكر المفرد",
         },
       },
       {
@@ -218,6 +257,7 @@ export const versets: Verset[] = [
           fr: "conjonction « wa » + verbe (v.) impératif, 2e pers. m. sing. + pronom suffixe, 3e pers. m. sing.",
           en: "conjunction « wa » + verb (v.) imperative, 2nd pers. m. sing. + suffix pronoun, 3rd pers. m. sing.",
           es: "conjunción « wa » + verbo (v.) imperativo, 2ª pers. m. sing. + sufijo pronominal, 3ª pers. m. sing.",
+          ar: "حرف عطف «وَ» + فعل أمر، للمخاطب المذكر المفرد + ضمير متصل، للغائب المذكر المفرد",
         },
       },
       {
@@ -228,6 +268,7 @@ export const versets: Verset[] = [
           fr: "particule d'emphase « inna » (rection à l'accusatif) + pronom suffixe, 3e pers. m. sing.",
           en: "emphatic particle « inna » (accusative-governing) + suffix pronoun, 3rd pers. m. sing.",
           es: "partícula enfática « inna » (rige acusativo) + sufijo pronominal, 3ª pers. m. sing.",
+          ar: "حرف نصب «إِنَّ» + ضمير متصل، للغائب المذكر المفرد",
         },
       },
       {
@@ -238,6 +279,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) « être » accompli, 3e pers. m. sing. (valeur durative : « est/demeure toujours »)",
           en: "verb (v.) “to be” perfect, 3rd pers. m. sing. (durative value: “is/remains always”)",
           es: "verbo (v.) « ser » perfectivo, 3ª pers. m. sing. (valor durativo: « es/permanece siempre »)",
+          ar: "فعل ماض ناقص، للغائب المذكر المفرد",
         },
       },
       {
@@ -252,6 +294,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) sing. indéf., accusatif (forme intensive, attribut de « kāna », l'un des noms d'Allah)",
           en: "common noun (m.) sing. indef., accusative (intensive form, predicate of « kāna », one of Allah's names)",
           es: "nombre común (m.) sing. indef., acusativo (forma intensiva, atributo de « kāna », uno de los nombres de Allah)",
+          ar: "اسم فاعل (مذكر) مفرد نكرة، منصوب",
         },
       },
     ],
@@ -260,6 +303,6 @@ export const versets: Verset[] = [
       en: "Then glorify your Lord and seek His forgiveness. Verily He is relenting.",
       es: "glorifica con alabanzas a tu Señor y busca Su perdón. En verdad, Él acepta al que se arrepiente.",
     },
-    audio: ["00:00.0", "00:01.5", "00:02.9", "00:04.8", "00:08.5", "00:10.7", "00:12.0"],
+    audio: { "al-hussary": ["00:00.0", "00:01.5", "00:02.9", "00:04.8", "00:08.5", "00:10.7", "00:12.0"] },
   },
 ];

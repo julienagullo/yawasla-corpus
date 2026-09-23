@@ -12,6 +12,7 @@ export const versets: Verset[] = [
           fr: "préposition « bi » + nom commun (m.) sing.",
           en: "preposition « bi » + common noun (m.) sing.",
           es: "preposición « bi » + nombre común (m.) sing.",
+          ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
       {
@@ -19,19 +20,34 @@ export const versets: Verset[] = [
         couleur: "or",
         transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
-        grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },
+        grammaire: {
+          fr: "nom propre (m.) sing.",
+          en: "proper noun (m.) sing.",
+          es: "nombre propio (m.) sing.",
+          ar: "اسم علم، مجرور",
+        },
       },
       {
         texte: "الرَّحْمَـٰنِ",
         transliteration: "Ar-Rahmani",
         traduction: { fr: "le Tout Miséricordieux", en: "most benevolent", es: "el Clementísimo" },
-        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+        grammaire: {
+          fr: "adjectif (m.) sing. déf.",
+          en: "adjective (m.) sing. def.",
+          es: "adjetivo (m.) sing. def.",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
+        },
       },
       {
         texte: "الرَّحِيمِ",
         transliteration: "Ar-Rahimi",
         traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo" },
-        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+        grammaire: {
+          fr: "adjectif (m.) sing. déf.",
+          en: "adjective (m.) sing. def.",
+          es: "adjetivo (m.) sing. def.",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
+        },
       },
     ],
     traduction: {
@@ -39,7 +55,7 @@ export const versets: Verset[] = [
       en: "In the name of Allah, most benevolent, ever-merciful.",
       es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
     },
-    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.7"],
+    audio: { "al-hussary": ["00:00.0", "00:01.0", "00:01.6", "00:02.7"] },
   },
   {
     numero: 1,
@@ -52,6 +68,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) impératif, 2e pers. m. sing.",
           en: "verb (v.) imperative, 2nd pers. m. sing.",
           es: "verbo (v.) imperativo, 2ª pers. m. sing.",
+          ar: "فعل أمر، للمخاطب المذكر المفرد",
         },
       },
       {
@@ -62,6 +79,7 @@ export const versets: Verset[] = [
           fr: "pronom personnel, 3e pers. m. sing.",
           en: "personal pronoun, 3rd pers. m. sing.",
           es: "pronombre personal, 3ª pers. m. sing.",
+          ar: "ضمير منفصل، للغائب المذكر المفرد",
         },
       },
       {
@@ -73,6 +91,7 @@ export const versets: Verset[] = [
           fr: "nom propre (m.) sing., nominatif",
           en: "proper noun (m.) sing., nominative",
           es: "nombre propio (m.) sing., nominativo",
+          ar: "اسم علم، مرفوع",
         },
       },
       {
@@ -83,6 +102,7 @@ export const versets: Verset[] = [
           fr: "nom/adjectif (m.) sing. indéf., nominatif (litt. « un, unique »)",
           en: "noun/adjective (m.) sing. indef., nominative (lit. “one, unique”)",
           es: "nombre/adjetivo (m.) sing. indef., nominativo (lit. « uno, único »)",
+          ar: "اسم (مذكر) نكرة، مرفوع",
         },
       },
     ],
@@ -91,7 +111,7 @@ export const versets: Verset[] = [
       en: 'SAY: "HE IS God the one the most unique,',
       es: "Di: «Él es Dios, uno.",
     },
-    audio: ["00:00.0", "00:00.6", "00:01.8", "00:02.8"],
+    audio: { "al-hussary": ["00:00.0", "00:00.6", "00:01.8", "00:02.8"] },
   },
   {
     numero: 2,
@@ -105,6 +125,7 @@ export const versets: Verset[] = [
           fr: "nom propre (m.) sing., nominatif",
           en: "proper noun (m.) sing., nominative",
           es: "nombre propio (m.) sing., nominativo",
+          ar: "اسم علم، مرفوع",
         },
       },
       {
@@ -115,6 +136,7 @@ export const versets: Verset[] = [
           fr: "nom commun (m.) sing. déf., nominatif (litt. « Le Suffisant absolu, Celui dont tous dépendent »)",
           en: "common noun (m.) sing. def., nominative (lit. “The Self-Sufficient, upon whom all depend”)",
           es: "nombre común (m.) sing. def., nominativo (lit. « El Autosuficiente, del que todos dependen »)",
+          ar: "اسم (مذكر) مفرد معرفة، مرفوع",
         },
       },
     ],
@@ -123,7 +145,7 @@ export const versets: Verset[] = [
       en: "God the immanently indispensable.",
       es: "Dios, eterno.",
     },
-    audio: ["00:00.0", "00:01.6"],
+    audio: { "al-hussary": ["00:00.0", "00:01.6"] },
   },
   {
     numero: 3,
@@ -136,6 +158,7 @@ export const versets: Verset[] = [
           fr: "particule de négation (jussif)",
           en: "negative particle (jussive)",
           es: "partícula de negación (yusivo)",
+          ar: "حرف نفي",
         },
       },
       {
@@ -146,6 +169,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) inaccompli apocopé (jussif), 3e pers. m. sing. (valeur de passé avec « lam »)",
           en: "verb (v.) apocopated imperfect (jussive), 3rd pers. m. sing. (past value with “lam”)",
           es: "verbo (v.) imperfectivo apocopado (yusivo), 3ª pers. m. sing. (valor de pasado con « lam »)",
+          ar: "فعل مضارع مجزوم، للغائب المذكر المفرد",
         },
       },
       {
@@ -156,6 +180,7 @@ export const versets: Verset[] = [
           fr: "conjonction « wa » + particule de négation (jussif)",
           en: "conjunction « wa » + negative particle (jussive)",
           es: "conjunción « wa » + partícula de negación (yusivo)",
+          ar: "حرف عطف «وَ» + حرف نفي",
         },
       },
       {
@@ -166,6 +191,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) passif inaccompli apocopé (jussif), 3e pers. m. sing.",
           en: "verb (v.) passive apocopated imperfect (jussive), 3rd pers. m. sing.",
           es: "verbo (v.) pasivo imperfectivo apocopado (yusivo), 3ª pers. m. sing.",
+          ar: "فعل مضارع مبني للمجهول مجزوم، للغائب المذكر المفرد",
         },
       },
     ],
@@ -174,7 +200,7 @@ export const versets: Verset[] = [
       en: "He has begotten no one, and is begotten of none.",
       es: "No ha engendrado ni ha sido engendrado",
     },
-    audio: ["00:00.0", "00:00.6", "00:01.7", "00:02.8"],
+    audio: { "al-hussary": ["00:00.0", "00:00.6", "00:01.7", "00:02.8"] },
   },
   {
     numero: 4,
@@ -187,6 +213,7 @@ export const versets: Verset[] = [
           fr: "conjonction « wa » + particule de négation (jussif)",
           en: "conjunction « wa » + negative particle (jussive)",
           es: "conjunción « wa » + partícula de negación (yusivo)",
+          ar: "حرف عطف «وَ» + حرف نفي",
         },
       },
       {
@@ -197,6 +224,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) inaccompli apocopé (jussif) de « être », 3e pers. m. sing.",
           en: "verb (v.) apocopated imperfect (jussive) of “to be”, 3rd pers. m. sing.",
           es: "verbo (v.) imperfectivo apocopado (yusivo) de « ser », 3ª pers. m. sing.",
+          ar: "فعل مضارع ناقص مجزوم، للغائب المذكر المفرد",
         },
       },
       {
@@ -207,6 +235,7 @@ export const versets: Verset[] = [
           fr: "préposition « li » + pronom suffixe, 3e pers. m. sing.",
           en: "preposition « li » + suffix pronoun, 3rd pers. m. sing.",
           es: "preposición « li » + sufijo pronominal, 3ª pers. m. sing.",
+          ar: "حرف جر «لِ» + ضمير متصل، للغائب المذكر المفرد",
         },
       },
       {
@@ -217,6 +246,7 @@ export const versets: Verset[] = [
           fr: "nom/adjectif (m.) sing. indéf., accusatif",
           en: "noun/adjective (m.) sing. indef., accusative",
           es: "nombre/adjetivo (m.) sing. indef., acusativo",
+          ar: "اسم (مذكر) نكرة، منصوب",
         },
       },
       {
@@ -227,6 +257,7 @@ export const versets: Verset[] = [
           fr: "nom/pronom (m.) sing. indéf., nominatif (litt. « quelqu'un, personne »)",
           en: "noun/pronoun (m.) sing. indef., nominative (lit. “someone, anyone”)",
           es: "nombre/pronombre (m.) sing. indef., nominativo (lit. « alguien, nadie »)",
+          ar: "اسم (مذكر) نكرة، مرفوع",
         },
       },
     ],
@@ -235,6 +266,6 @@ export const versets: Verset[] = [
       en: "There is no one comparable to Him.",
       es: "y no hay otro semejante a Él.»",
     },
-    audio: ["00:00.0", "00:01.0", "00:02.0", "00:03.2", "00:04.8"],
+    audio: { "al-hussary": ["00:00.0", "00:01.0", "00:02.0", "00:03.2", "00:04.8"] },
   },
 ];

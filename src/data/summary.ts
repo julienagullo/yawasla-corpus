@@ -137,6 +137,8 @@ export function padId(id: number): string {
 }
 
 export function titreSourate(sourate: Sourate, langue: Langue = "fr"): string {
+  // En arabe le nom n'a rien à se traduire ni se translittérer : c'est le nom arabe lui-même.
+  if (langue === "ar") return sourate.nom.arabe;
   const { transliteration, sens } = sourate.nom;
   return sens ? `${transliteration} (${sens[langue]})` : transliteration;
 }

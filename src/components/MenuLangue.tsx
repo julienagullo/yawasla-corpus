@@ -7,7 +7,7 @@ import { LANGUES, langueDePathname, urlPourLangue } from "@/conf/locale";
 import { LIBELLES } from "@/conf/libelles";
 import type { Langue } from "@/conf/types";
 
-const LIBELLE_LANGUE: Record<Langue, string> = { fr: "Français", en: "English", es: "Español" };
+const LIBELLE_LANGUE: Record<Langue, string> = { fr: "Français", en: "English", es: "Español", ar: "العربية" };
 const DELAI_FERMETURE_MS = 300;
 
 // Menu de langue : survol (souris) + clic (mobile, pas de vrai hover tactile), chaque option pointe vers l'URL équivalente dans cette langue.
@@ -74,6 +74,7 @@ export default function MenuLangue() {
                 href={urlPourLangue(pathname, option)}
                 role="menuitemradio"
                 aria-checked={option === langue}
+                lang={option}
                 className={`menu-langue__option ${option === langue ? "menu-langue__option--actif" : ""}`}
                 onClick={() => setOuvert(false)}
               >

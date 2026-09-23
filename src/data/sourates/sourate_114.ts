@@ -9,9 +9,10 @@ export const versets: Verset[] = [
         transliteration: "Bismi",
         traduction: { fr: "Au nom de", en: "In the name of", es: "En el nombre de" },
         grammaire: {
-          fr: "préposition « bi » + nom commun (m.) sing.",
-          en: "preposition « bi » + common noun (m.) sing.",
-          es: "preposición « bi » + nombre común (m.) sing.",
+          fr: "préposition « bi » + nom commun (m.), génitif",
+          en: "preposition « bi » + common noun (m.), genitive",
+          es: "preposición « bi » + nombre común (m.), genitivo",
+          ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
       {
@@ -19,19 +20,34 @@ export const versets: Verset[] = [
         couleur: "or",
         transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
-        grammaire: { fr: "nom propre (m.) sing.", en: "proper noun (m.) sing.", es: "nombre propio (m.) sing." },
+        grammaire: {
+          fr: "nom propre, génitif",
+          en: "proper noun, genitive",
+          es: "nombre propio, genitivo",
+          ar: "اسم علم، مجرور",
+        },
       },
       {
         texte: "الرَّحْمَـٰنِ",
         transliteration: "Ar-Rahmani",
         traduction: { fr: "le Tout Miséricordieux", en: "most benevolent", es: "el Clementísimo" },
-        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+        grammaire: {
+          fr: "adjectif (m.) sing. déf., génitif",
+          en: "adjective (m.) sing. def., genitive",
+          es: "adjetivo (m.) sing. def., genitivo",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
+        },
       },
       {
         texte: "الرَّحِيمِ",
         transliteration: "Ar-Rahimi",
         traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo" },
-        grammaire: { fr: "adjectif (m.) sing. déf.", en: "adjective (m.) sing. def.", es: "adjetivo (m.) sing. def." },
+        grammaire: {
+          fr: "adjectif (m.) sing. déf., génitif",
+          en: "adjective (m.) sing. def., genitive",
+          es: "adjetivo (m.) sing. def., genitivo",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
+        },
       },
     ],
     traduction: {
@@ -39,7 +55,10 @@ export const versets: Verset[] = [
       en: "In the name of Allah, most benevolent, ever-merciful.",
       es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
     },
-    audio: ["00:00.0", "00:00.9", "00:01.6", "00:02.7"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.0", "00:01.6", "00:02.7"],
+      "al-houdaifi": ["00:00.0", "00:01.0", "00:01.6", "00:02.6"]
+    },
   },
   {
     numero: 1,
@@ -52,6 +71,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) impératif, 2e pers. m. sing.",
           en: "verb (v.) imperative, 2nd pers. m. sing.",
           es: "verbo (v.) imperativo, 2ª pers. m. sing.",
+          ar: "فعل أمر، للمخاطب المذكر المفرد",
         },
       },
       {
@@ -62,6 +82,7 @@ export const versets: Verset[] = [
           fr: "verbe (v.) inaccompli, 1re pers. sing.",
           en: "verb (v.) imperfect, 1st pers. sing.",
           es: "verbo (v.) imperfectivo, 1ª pers. sing.",
+          ar: "فعل مضارع، للمتكلم المفرد",
         },
       },
       {
@@ -69,9 +90,10 @@ export const versets: Verset[] = [
         transliteration: "Bi rabbi",
         traduction: { fr: "auprès du Seigneur", en: "with the Lord", es: "en el Señor" },
         grammaire: {
-          fr: "préposition « bi » + nom commun (m.) sing. (état construit)",
-          en: "preposition « bi » + common noun (m.) sing. (construct state)",
-          es: "preposición « bi » + nombre común (m.) sing. (estado constructo)",
+          fr: "préposition « bi » + nom commun (m.), génitif",
+          en: "preposition « bi » + common noun (m.), genitive",
+          es: "preposición « bi » + nombre común (m.), genitivo",
+          ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
       {
@@ -79,9 +101,10 @@ export const versets: Verset[] = [
         transliteration: "An-Nasi",
         traduction: { fr: "des hommes", en: "of men", es: "de los seres humanos" },
         grammaire: {
-          fr: "nom commun (m.) pluriel déf. (litt. « les hommes »)",
-          en: "common noun (m.) plural def. (lit. “the men”)",
-          es: "nombre común (m.) plural def. (lit. « los hombres »)",
+          fr: "nom commun (m.) plur. déf., génitif",
+          en: "common noun (m.) plural def., genitive",
+          es: "nombre común (m.) plural def., genitivo",
+          ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
       },
     ],
@@ -90,7 +113,10 @@ export const versets: Verset[] = [
       en: 'SAY: "I SEEK refuge with the Lord of men,',
       es: "Di: «Me refugio en el Señor de los seres humanos,",
     },
-    audio: ["00:00.0", "00:01.0", "00:02.8", "00:04.4"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.0", "00:02.8", "00:04.4"],
+      "al-houdaifi": ["00:00.0", "00:00.7", "00:01.4", "00:03.2"]
+    },
   },
   {
     numero: 2,
@@ -100,9 +126,10 @@ export const versets: Verset[] = [
         transliteration: "Maliki",
         traduction: { fr: "Le Souverain", en: "The King", es: "el Rey" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
+          ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
       {
@@ -110,9 +137,10 @@ export const versets: Verset[] = [
         transliteration: "An-Nasi",
         traduction: { fr: "des hommes", en: "of men", es: "de los seres humanos" },
         grammaire: {
-          fr: "nom commun (m.) pluriel déf. (litt. « les hommes »)",
-          en: "common noun (m.) plural def. (lit. “the men”)",
-          es: "nombre común (m.) plural def. (lit. « los hombres »)",
+          fr: "nom commun (m.) plur. déf., génitif",
+          en: "common noun (m.) plural def., genitive",
+          es: "nombre común (m.) plural def., genitivo",
+          ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
       },
     ],
@@ -121,7 +149,10 @@ export const versets: Verset[] = [
       en: "The King of men,",
       es: "el Rey de los seres humanos,",
     },
-    audio: ["00:00.0", "00:01.6"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.6"],
+      "al-houdaifi": ["00:00.0", "00:01.1"]
+    },
   },
   {
     numero: 3,
@@ -131,9 +162,10 @@ export const versets: Verset[] = [
         transliteration: "Ilahi",
         traduction: { fr: "Dieu", en: "The God", es: "el dios" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
+          ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
       {
@@ -141,9 +173,10 @@ export const versets: Verset[] = [
         transliteration: "An-Nasi",
         traduction: { fr: "des hommes", en: "of men", es: "de los seres humanos" },
         grammaire: {
-          fr: "nom commun (m.) pluriel déf. (litt. « les hommes »)",
-          en: "common noun (m.) plural def. (lit. “the men”)",
-          es: "nombre común (m.) plural def. (lit. « los hombres »)",
+          fr: "nom commun (m.) plur. déf., génitif",
+          en: "common noun (m.) plural def., genitive",
+          es: "nombre común (m.) plural def., genitivo",
+          ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
       },
     ],
@@ -152,7 +185,10 @@ export const versets: Verset[] = [
       en: "The God of men,",
       es: "el dios de los seres humanos,",
     },
-    audio: ["00:00.0", "00:01.8"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.8"],
+      "al-houdaifi": ["00:00.0", "00:01.7"]
+    },
   },
   {
     numero: 4,
@@ -161,16 +197,22 @@ export const versets: Verset[] = [
         texte: "مِن",
         transliteration: "Min",
         traduction: { fr: "contre", en: "From", es: "del" },
-        grammaire: { fr: "préposition", en: "preposition", es: "preposición" },
+        grammaire: {
+          fr: "préposition",
+          en: "preposition",
+          es: "preposición",
+          ar: "حرف جر",
+        },
       },
       {
         texte: "شَرِّ",
         transliteration: "Sharri",
         traduction: { fr: "le mal du", en: "the evil of", es: "mal" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
+          ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
       {
@@ -179,9 +221,10 @@ export const versets: Verset[] = [
         transliteration: "Al-Waswasi",
         traduction: { fr: "mauvais conseiller", en: "the whisperer", es: "del susurrante" },
         grammaire: {
-          fr: "nom commun (m.) sing. déf., génitif (litt. « l'insinuation »)",
-          en: "common noun (m.) sing. def., genitive (lit. “the whispering/insinuation”)",
-          es: "nombre común (m.) sing. def., genitivo (lit. « la insinuación »)",
+          fr: "nom commun (m.) sing. déf., génitif",
+          en: "common noun (m.) sing. def., genitive",
+          es: "nombre común (m.) sing. def., genitivo",
+          ar: "اسم (مذكر) مفرد معرفة، مجرور",
         },
       },
       {
@@ -189,9 +232,10 @@ export const versets: Verset[] = [
         transliteration: "Al-Khannasi",
         traduction: { fr: "furtif", en: "who withdraws", es: "tentador" },
         grammaire: {
-          fr: "adjectif (m.) sing. déf., génitif (litt. « qui se retire furtivement »)",
-          en: "adjective (m.) sing. def., genitive (lit. “who slinks away”)",
-          es: "adjetivo (m.) sing. def., genitivo (lit. « que se retira furtivamente »)",
+          fr: "adjectif (m.) sing. déf., génitif",
+          en: "adjective (m.) sing. def., genitive",
+          es: "adjetivo (m.) sing. def., genitivo",
+          ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
       },
     ],
@@ -200,7 +244,10 @@ export const versets: Verset[] = [
       en: "From the evil of him who breathes temptations into the minds of men,",
       es: "del mal del susurrante tentador,",
     },
-    audio: ["00:00.0", "00:01.4", "00:03.0", "00:05.4"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.4", "00:03.0", "00:05.4"],
+      "al-houdaifi": ["00:00.0", "00:01.1", "00:02.0", "00:03.0"]
+    },
   },
   {
     numero: 5,
@@ -213,6 +260,7 @@ export const versets: Verset[] = [
           fr: "pronom relatif (m.) sing.",
           en: "relative pronoun (m.) sing.",
           es: "pronombre relativo (m.) sing.",
+          ar: "اسم موصول (مذكر) مفرد",
         },
       },
       {
@@ -223,22 +271,29 @@ export const versets: Verset[] = [
           fr: "verbe (v.) inaccompli, 3e pers. m. sing.",
           en: "verb (v.) imperfect, 3rd pers. m. sing.",
           es: "verbo (v.) imperfectivo, 3ª pers. m. sing.",
+          ar: "فعل مضارع، للغائب المذكر المفرد",
         },
       },
       {
         texte: "فِي",
         transliteration: "Fi",
         traduction: { fr: "dans", en: "to", es: "en" },
-        grammaire: { fr: "préposition", en: "preposition", es: "preposición" },
+        grammaire: {
+          fr: "préposition",
+          en: "preposition",
+          es: "preposición",
+          ar: "حرف جر",
+        },
       },
       {
         texte: "صُدُورِ",
         transliteration: "Suduri",
         traduction: { fr: "les poitrines", en: "the hearts", es: "el pecho" },
         grammaire: {
-          fr: "nom commun (m.) pluriel (état construit), génitif",
-          en: "common noun (m.) plural (construct state), genitive",
-          es: "nombre común (m.) plural (estado constructo), genitivo",
+          fr: "nom commun (m.) plur., génitif",
+          en: "common noun (m.) plural, genitive",
+          es: "nombre común (m.) plural, genitivo",
+          ar: "اسم (مذكر) جمع، مجرور",
         },
       },
       {
@@ -246,9 +301,10 @@ export const versets: Verset[] = [
         transliteration: "An-Nasi",
         traduction: { fr: "des hommes", en: "of men", es: "de los seres humanos" },
         grammaire: {
-          fr: "nom commun (m.) pluriel déf. (litt. « les hommes »)",
-          en: "common noun (m.) plural def. (lit. “the men”)",
-          es: "nombre común (m.) plural def. (lit. « los hombres »)",
+          fr: "nom commun (m.) plur. déf., génitif",
+          en: "common noun (m.) plural def., genitive",
+          es: "nombre común (m.) plural def., genitivo",
+          ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
       },
     ],
@@ -257,7 +313,10 @@ export const versets: Verset[] = [
       en: "Who suggests evil thoughts to the hearts of men --",
       es: "el que susurra en el pecho de los seres humanos",
     },
-    audio: ["00:00.0", "00:02.0", "00:04.2", "00:05.0", "00:06.6"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:02.0", "00:04.2", "00:05.0", "00:06.6"],
+      "al-houdaifi": ["00:00.0", "00:01.15", "00:02.1", "00:02.9", "00:04.4"]
+    },
   },
   {
     numero: 6,
@@ -266,26 +325,33 @@ export const versets: Verset[] = [
         texte: "مِنَ",
         transliteration: "Mina",
         traduction: { fr: "qu'il (le conseiller) soit", en: "From among", es: "y procede de" },
-        grammaire: { fr: "préposition", en: "preposition", es: "preposición" },
+        grammaire: {
+          fr: "préposition",
+          en: "preposition",
+          es: "preposición",
+          ar: "حرف جر",
+        },
       },
       {
         texte: "الْجِنَّةِ",
         transliteration: "Al-Jinnati",
-        traduction: { fr: "les djinns,", en: "the jinns", es: "los genios" },
+        traduction: { fr: "un djinn", en: "the jinns", es: "los genios" },
         grammaire: {
-          fr: "nom collectif (f.) sing. déf., génitif (litt. « les djinns »)",
-          en: "collective noun (f.) sing. def., genitive (lit. “the jinn”)",
-          es: "nombre colectivo (f.) sing. def., genitivo (lit. « los genios »)",
+          fr: "nom commun (f.) déf., génitif",
+          en: "common noun (f.) def., genitive",
+          es: "nombre común (f.) def., genitivo",
+          ar: "اسم (مؤنث) معرفة، مجرور",
         },
       },
       {
         texte: "وَالنَّاسِ",
         transliteration: "Wa an-Nasi",
-        traduction: { fr: "ou des hommes».", en: "and men.", es: "y de los seres humanos.»" },
+        traduction: { fr: "ou un être humain", en: "and men", es: "y de los seres humanos" },
         grammaire: {
-          fr: "conjonction « wa » + nom commun (m.) pluriel déf., génitif",
+          fr: "conjonction « wa » + nom commun (m.) plur. déf., génitif",
           en: "conjunction « wa » + common noun (m.) plural def., genitive",
           es: "conjunción « wa » + nombre común (m.) plural def., genitivo",
+          ar: "حرف عطف «وَ» + اسم (مذكر) جمع معرفة، مجرور",
         },
       },
     ],
@@ -294,6 +360,9 @@ export const versets: Verset[] = [
       en: "From among the jinns and men.",
       es: "y procede de los genios y de los seres humanos.»",
     },
-    audio: ["00:00.0", "00:01.6", "00:03.8"],
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.6", "00:03.8"],
+      "al-houdaifi": ["00:00.0", "00:00.9", "00:02.9"]
+    },
   },
 ];

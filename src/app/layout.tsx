@@ -5,6 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TransliterationProvider } from "@/components/TransliterationProvider";
+import { RecitateurProvider } from "@/components/RecitateurProvider";
 import { LectureAudioProvider } from "@/components/LectureAudioProvider";
 import BarreNavigation from "@/components/BarreNavigation";
 
@@ -29,22 +30,24 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://corpus.yawasla.org"),
   title: "Yawasla Corpus",
   description: "Prototype de lecture verset par verset avec traduction au survol des mots.",
-  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
+      dir="ltr"
       className={`${geistSans.variable} ${geistMono.variable} ${amiri.variable}`}
     >
       <body className="min-vh-100 d-flex flex-column">
         <ThemeProvider>
           <TransliterationProvider>
-            <LectureAudioProvider>
-              {children}
-              <BarreNavigation />
-            </LectureAudioProvider>
+            <RecitateurProvider>
+              <LectureAudioProvider>
+                {children}
+                <BarreNavigation />
+              </LectureAudioProvider>
+            </RecitateurProvider>
           </TransliterationProvider>
         </ThemeProvider>
       </body>

@@ -3,6 +3,7 @@ import { sourates, getVersets } from "@/data/summary";
 import type { Langue } from "@/conf/types";
 import Infobulle from "@/components/Infobulle";
 import TitreSourate from "@/components/TitreSourate";
+import SelecteurRecitateur from "@/components/SelecteurRecitateur";
 import SeparateurOrnemental from "@/components/SeparateurOrnemental";
 import Versets from "@/components/Versets";
 
@@ -19,6 +20,7 @@ export default function PageSourate({ id, name, langue }: { id: string; name: st
   return (
     <main className="page-shell py-5">
       <TitreSourate sourate={sourate} langue={langue} />
+      <SelecteurRecitateur dossier={`${id}-${name}`} langue={langue} />
       <SeparateurOrnemental />
       <Infobulle dir="rtl" lang="ar" langue={langue}>
         <Versets versets={versets} langue={langue} dossier={`${id}-${name}`} />

@@ -61,14 +61,15 @@ Hébergement cible : VPS, le build statique est simplement servi par le serveur 
 - Traduction espagnole : `es.bornez.xml` — Bornez, Tanzil Project.
 - Analyse mot-à-mot (traduction + grammaire par mot) : Quranic Arabic Corpus (Kais Dukes).
 
-**Traduction mot-à-mot (absente des sources ci-dessus) : à déduire, jamais inventée librement.** La grammaire vient du Quranic Arabic Corpus. Par défaut, on reprend le mot de la traduction officielle du verset (Hamidullah/Ahmed Ali/Bornez) qui correspond le mieux à chaque mot arabe — le traducteur reste la référence, pas de sens inventé. Exception ponctuelle : si la traduction officielle rend mal/trop librement le sens du verset pour un mot donné, on se permet d'ajouter un autre mot plus fidèle — à faire au cas par cas, pas systématiquement.
+**Traduction mot-à-mot (absente des sources ci-dessus) : à déduire, jamais inventée librement.** La grammaire vient du Quranic Arabic Corpus. Grammaire (fr/en/es/ar) générée par `npm run grammaire -- <n° sourate>` (`scripts/grammaire.mjs`) depuis `quranic-corpus-morphology-0.4.txt`, jamais écrite à la main : une étiquette non traduite ou un nombre de mots différent du corpus arrête le script. Par défaut, on reprend le mot de la traduction officielle du verset (Hamidullah/Ahmed Ali/Bornez) qui correspond le mieux à chaque mot arabe — le traducteur reste la référence, pas de sens inventé. Exception ponctuelle : si la traduction officielle rend mal/trop librement le sens du verset pour un mot donné, on se permet d'ajouter un autre mot plus fidèle — à faire au cas par cas, pas systématiquement.
 
 **Obligations de licence (les deux sources) : copie verbatim uniquement, ne jamais modifier le texte/l'annotation, attribution + lien obligatoires et visibles sur le site** (Tanzil Project → tanzil.net, Quranic Arabic Corpus → corpus.quran.com). Le découpage du texte en mots cliquables n'est pas une modification tant que le contenu affiché reste identique.
 
 ## Audio (récitation)
 
-Récitateur : Al-Hussary (`sources/audio/`, un mp3 par sourate complète, attribution à faire dans un futur volet remerciements/licences).
-Découpage en un mp3 par verset dans `public/assets/audio/<id>-<slug>/` (ex. `001-al-fatiha/01.mp3`), enregistré dans `conf/audio.ts`.
+Deux récitateurs : Al-Hussary et Al-Houdaifi (`sources/al-hussary/` et `sources/al-houdaifi/`, un mp3 par sourate complète, attribution visible dans le panneau « Sources & remerciements », voir `conf/license.ts`).
+Découpage en un mp3 par verset dans `public/assets/audio/<recitateur>/<id>-<slug>/` (ex. `al-hussary/001-al-fatiha/01.mp3`), un tableau de sourates découpées par récitateur dans `conf/audio.ts`.
+Sélecteur de récitateur (`SelecteurRecitateur`) affiché sous le nom de la sourate, une option par récitateur, désactivée si la sourate n'est pas encore découpée pour lui. Choix mémorisé en local (`RecitateurProvider`, même pattern que `ThemeProvider`/`TransliterationProvider`) et partagé avec la barre de navigation (lecture sourate entière) et le bouton par verset.
 **Bismillah : verset `numero: 0` dans `sourate_NNN.ts`** (mots/traduction/audio identiques au verset 1 d'Al-Fatiha, seule sourate où c'est un vrai verset), sauf At-Tawbah/9 qui n'en a pas — pas comptée comme un verset par les savants, donc `NumeroVerset` n'affiche pas de numéro pour elle (voir `src/components/NumeroVerset.tsx`), mais elle est lue/surlignée normalement. Copier aussi `001-al-fatiha/01.mp3` en `00.mp3` dans le dossier audio de la nouvelle sourate (fichier dupliqué plutôt que référencé depuis celui d'Al-Fatiha, pour garder chaque dossier audio autonome).
 Minutage mot-à-mot (surlignage pendant la lecture) : champ `Verset.audio` (`"mm:ss.d"`, un timestamp de départ par mot) dans `src/data/sourates/sourate_NNN.ts`, calé à l'oreille.
 
@@ -93,6 +94,8 @@ Tout ce qui n'est pas listé dans « Concept » ci-dessus à ne pas développer 
 - [x] Attribution Tanzil + Quranic Arabic Corpus visible sur le site (obligation de licence)
 - [ ] Intégration du contenu
 - [ ] Système de mot favori + page « dico personnel »
+- [x] Sélecteur de récitateur (options désactivées tant qu'une sourate n'est pas découpée pour ce récitateur)
+- [ ] Découper Al-Houdaifi en clips par verset
 
 <!-- BEGIN:nextjs-agent-rules -->
 
