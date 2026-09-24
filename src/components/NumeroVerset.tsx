@@ -24,7 +24,7 @@ export default function NumeroVerset({
 
   if (numero === 0) return null;
 
-  if (!dossier || !aAudio(recitateur, dossier)) {
+  if (!dossier || !aAudio(recitateur, versets)) {
     return <span className="mx-1 fs-6 text-muted">({numero})</span>;
   }
 

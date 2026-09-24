@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { sourates, getVersets } from "@/data/summary";
 import type { Langue } from "@/conf/types";
+import { aAudio, TOUS_RECITATEURS } from "@/conf/audio";
 import Infobulle from "@/components/Infobulle";
 import TitreSourate from "@/components/TitreSourate";
 import SelecteurRecitateur from "@/components/SelecteurRecitateur";
@@ -20,7 +21,7 @@ export default function PageSourate({ id, name, langue }: { id: string; name: st
   return (
     <main className="page-shell py-5">
       <TitreSourate sourate={sourate} langue={langue} />
-      <SelecteurRecitateur dossier={`${id}-${name}`} langue={langue} />
+      <SelecteurRecitateur disponibles={TOUS_RECITATEURS.filter((r) => aAudio(r, versets))} langue={langue} />
       <SeparateurOrnemental />
       <Infobulle dir="rtl" lang="ar" langue={langue}>
         <Versets versets={versets} langue={langue} dossier={`${id}-${name}`} />

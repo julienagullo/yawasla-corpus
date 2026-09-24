@@ -9,9 +9,9 @@ export const versets: Verset[] = [
         transliteration: "Bismi",
         traduction: { fr: "Au nom de", en: "In the name of", es: "En el nombre de" },
         grammaire: {
-          fr: "préposition « bi » + nom commun (m.) sing.",
-          en: "preposition « bi » + common noun (m.) sing.",
-          es: "preposición « bi » + nombre común (m.) sing.",
+          fr: "préposition « bi » + nom commun (m.), génitif",
+          en: "preposition « bi » + common noun (m.), genitive",
+          es: "preposición « bi » + nombre común (m.), genitivo",
           ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
@@ -21,9 +21,9 @@ export const versets: Verset[] = [
         transliteration: "Allahi",
         traduction: { fr: "Allah", en: "Allah", es: "Al.lah" },
         grammaire: {
-          fr: "nom propre (m.) sing.",
-          en: "proper noun (m.) sing.",
-          es: "nombre propio (m.) sing.",
+          fr: "nom propre, génitif",
+          en: "proper noun, genitive",
+          es: "nombre propio, genitivo",
           ar: "اسم علم، مجرور",
         },
       },
@@ -32,9 +32,9 @@ export const versets: Verset[] = [
         transliteration: "Ar-Rahmani",
         traduction: { fr: "le Tout Miséricordieux", en: "most benevolent", es: "el Clementísimo" },
         grammaire: {
-          fr: "adjectif (m.) sing. déf.",
-          en: "adjective (m.) sing. def.",
-          es: "adjetivo (m.) sing. def.",
+          fr: "adjectif (m.) sing. déf., génitif",
+          en: "adjective (m.) sing. def., genitive",
+          es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
       },
@@ -43,9 +43,9 @@ export const versets: Verset[] = [
         transliteration: "Ar-Rahimi",
         traduction: { fr: "le Très Miséricordieux", en: "ever-merciful", es: "el Misericordiosísimo" },
         grammaire: {
-          fr: "adjectif (m.) sing. déf.",
-          en: "adjective (m.) sing. def.",
-          es: "adjetivo (m.) sing. def.",
+          fr: "adjectif (m.) sing. déf., génitif",
+          en: "adjective (m.) sing. def., genitive",
+          es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
       },
@@ -55,7 +55,10 @@ export const versets: Verset[] = [
       en: "In the name of Allah, most benevolent, ever-merciful.",
       es: "En el nombre de Al.lah, el Clementísimo, el Misericordiosísimo.",
     },
-    audio: { "al-hussary": ["00:00.0", "00:01.0", "00:01.6", "00:02.7"] },
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.0", "00:01.6", "00:02.7"],
+      "al-houdaifi": ["00:00.0", "00:01.0", "00:01.6", "00:02.6"]
+    },
   },
   {
     numero: 1,
@@ -87,9 +90,9 @@ export const versets: Verset[] = [
         transliteration: "Bi rabbi",
         traduction: { fr: "auprès du Seigneur", en: "with the Lord", es: "en el Señor" },
         grammaire: {
-          fr: "préposition « bi » + nom commun (m.) sing. (état construit)",
-          en: "preposition « bi » + common noun (m.) sing. (construct state)",
-          es: "preposición « bi » + nombre común (m.) sing. (estado constructo)",
+          fr: "préposition « bi » + nom commun (m.), génitif",
+          en: "preposition « bi » + common noun (m.), genitive",
+          es: "preposición « bi » + nombre común (m.), genitivo",
           ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
       },
@@ -98,9 +101,9 @@ export const versets: Verset[] = [
         transliteration: "Al-Falaqi",
         traduction: { fr: "de l'aube naissante", en: "of rising day", es: "del alba" },
         grammaire: {
-          fr: "nom commun (m.) sing. déf., génitif",
-          en: "common noun (m.) sing. def., genitive",
-          es: "nombre común (m.) sing. def., genitivo",
+          fr: "nom commun (m.) déf., génitif",
+          en: "common noun (m.) def., genitive",
+          es: "nombre común (m.) def., genitivo",
           ar: "اسم (مذكر) معرفة، مجرور",
         },
       },
@@ -110,7 +113,10 @@ export const versets: Verset[] = [
       en: 'SAY: "I SEEK refuge with the Lord of rising day',
       es: "Di: «Me refugio en el Señor del alba",
     },
-    audio: { "al-hussary": ["00:00.0", "00:00.6", "00:01.9", "00:03.4"] },
+    audio: {
+      "al-hussary": ["00:00.0", "00:00.6", "00:01.9", "00:03.4"],
+      "al-houdaifi": ["00:00.0", "00:00.8", "00:01.4", "00:02.5"]
+    },
   },
   {
     numero: 2,
@@ -131,9 +137,9 @@ export const versets: Verset[] = [
         transliteration: "Sharri",
         traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
@@ -165,7 +171,10 @@ export const versets: Verset[] = [
       en: "From the evil of what He has created,",
       es: "del mal de lo que Él ha creado",
     },
-    audio: { "al-hussary": ["00:00.0", "00:00.8", "00:02.0", "00:02.9"] },
+    audio: {
+      "al-hussary": ["00:00.0", "00:00.8", "00:02.0", "00:02.9"],
+      "al-houdaifi": ["00:00.0", "00:01.3", "00:01.9", "00:02.5"]
+    },
   },
   {
     numero: 3,
@@ -186,9 +195,9 @@ export const versets: Verset[] = [
         transliteration: "Sharri",
         traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
@@ -197,9 +206,9 @@ export const versets: Verset[] = [
         transliteration: "Ghasiqin",
         traduction: { fr: "l'obscurité", en: "evening darkness", es: "la oscuridad" },
         grammaire: {
-          fr: "participe actif (m.) sing. indéf., génitif (litt. « celui qui s'assombrit »)",
-          en: "active participle (m.) sing. indef., genitive (lit. “that which grows dark”)",
-          es: "participio activo (m.) sing. indef., genitivo (lit. « el que se oscurece »)",
+          fr: "participe actif (m.) indéf., génitif",
+          en: "active participle (m.) indef., genitive",
+          es: "participio activo (m.) indef., genitivo",
           ar: "اسم فاعل (مذكر) نكرة، مجرور",
         },
       },
@@ -208,9 +217,9 @@ export const versets: Verset[] = [
         transliteration: "Idha",
         traduction: { fr: "quand", en: "when", es: "cuando" },
         grammaire: {
-          fr: "particule temporelle",
-          en: "temporal particle",
-          es: "partícula temporal",
+          fr: "adverbe de temps",
+          en: "time adverb",
+          es: "adverbio de tiempo",
           ar: "ظرف زمان",
         },
       },
@@ -219,9 +228,9 @@ export const versets: Verset[] = [
         transliteration: "Waqaba",
         traduction: { fr: "elle s'approfondit", en: "it overspreads", es: "se extiende" },
         grammaire: {
-          fr: "verbe (v.) accompli, 3e pers. m. sing. (litt. « s'installa/pénétra »)",
-          en: "verb (v.) perfect, 3rd pers. m. sing. (lit. “settled in/spread”)",
-          es: "verbo (v.) perfectivo, 3ª pers. m. sing. (lit. « se instaló/penetró »)",
+          fr: "verbe (v.) accompli, 3e pers. m. sing.",
+          en: "verb (v.) perfect, 3rd pers. m. sing.",
+          es: "verbo (v.) perfectivo, 3ª pers. m. sing.",
           ar: "فعل ماض، للغائب المذكر المفرد",
         },
       },
@@ -231,7 +240,10 @@ export const versets: Verset[] = [
       en: "And the evil of evening darkness when it overspreads,",
       es: "y del mal de la oscuridad de la noche cuando se extiende",
     },
-    audio: { "al-hussary": ["00:00.0", "00:01.2", "00:02.2", "00:04.4", "00:05.6"] },
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.2", "00:02.2", "00:04.4", "00:05.6"],
+      "al-houdaifi": ["00:00.0", "00:01.55", "00:02.1", "00:03.3", "00:04.0"]
+    },
   },
   {
     numero: 4,
@@ -252,9 +264,9 @@ export const versets: Verset[] = [
         transliteration: "Sharri",
         traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
@@ -263,9 +275,9 @@ export const versets: Verset[] = [
         transliteration: "An-Naffathati",
         traduction: { fr: "celles qui soufflent [les sorcières]", en: "sorceresses who blow", es: "las sopladoras" },
         grammaire: {
-          fr: "nom/participe actif (f.) pluriel déf., génitif (litt. « celles qui soufflent »)",
-          en: "noun/active participle (f.) plural def., genitive (lit. “those [fem.] who blow”)",
-          es: "nombre/participio activo (f.) plural def., genitivo (lit. « las que soplan »)",
+          fr: "nom commun (f.) plur. déf., génitif",
+          en: "common noun (f.) plural def., genitive",
+          es: "nombre común (f.) plural def., genitivo",
           ar: "اسم (مؤنث) جمع معرفة، مجرور",
         },
       },
@@ -285,7 +297,7 @@ export const versets: Verset[] = [
         transliteration: "Al-'Uqadi",
         traduction: { fr: "les nœuds", en: "knots", es: "nudos" },
         grammaire: {
-          fr: "nom commun (m.) pluriel déf., génitif",
+          fr: "nom commun (m.) plur. déf., génitif",
           en: "common noun (m.) plural def., genitive",
           es: "nombre común (m.) plural def., genitivo",
           ar: "اسم (مذكر) جمع معرفة، مجرور",
@@ -297,7 +309,10 @@ export const versets: Verset[] = [
       en: "From the evil of sorceresses who blow incantations on knots,",
       es: "y del mal de las sopladoras de nudos",
     },
-    audio: { "al-hussary": ["00:00.0", "00:01.2", "00:03.0", "00:06.0", "00:06.8"] },
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.2", "00:03.0", "00:06.0", "00:06.8"],
+      "al-houdaifi": ["00:00.0", "00:01.4", "00:02.8", "00:04.4", "00:05.0"]
+    },
   },
   {
     numero: 5,
@@ -318,9 +333,9 @@ export const versets: Verset[] = [
         transliteration: "Sharri",
         traduction: { fr: "le mal de", en: "the evil of", es: "mal" },
         grammaire: {
-          fr: "nom commun (m.) sing. (état construit), génitif",
-          en: "common noun (m.) sing. (construct state), genitive",
-          es: "nombre común (m.) sing. (estado constructo), genitivo",
+          fr: "nom commun (m.) sing., génitif",
+          en: "common noun (m.) sing., genitive",
+          es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
       },
@@ -329,9 +344,9 @@ export const versets: Verset[] = [
         transliteration: "Hasidin",
         traduction: { fr: "l'envieux", en: "the envier", es: "el envidioso" },
         grammaire: {
-          fr: "participe actif (m.) sing. indéf., génitif (litt. « celui qui envie »)",
-          en: "active participle (m.) sing. indef., genitive (lit. “the one who envies”)",
-          es: "participio activo (m.) sing. indef., genitivo (lit. « el que envidia »)",
+          fr: "participe actif (m.) indéf., génitif",
+          en: "active participle (m.) indef., genitive",
+          es: "participio activo (m.) indef., genitivo",
           ar: "اسم فاعل (مذكر) نكرة، مجرور",
         },
       },
@@ -340,9 +355,9 @@ export const versets: Verset[] = [
         transliteration: "Idha",
         traduction: { fr: "quand", en: "when", es: "cuando" },
         grammaire: {
-          fr: "particule temporelle",
-          en: "temporal particle",
-          es: "partícula temporal",
+          fr: "adverbe de temps",
+          en: "time adverb",
+          es: "adverbio de tiempo",
           ar: "ظرف زمان",
         },
       },
@@ -363,6 +378,9 @@ export const versets: Verset[] = [
       en: "From the evil of the envier when he envies.",
       es: "y del mal del envidioso cuando envidia.»",
     },
-    audio: { "al-hussary": ["00:00.0", "00:01.2", "00:02.2", "00:04.2", "00:05.4"] },
+    audio: {
+      "al-hussary": ["00:00.0", "00:01.2", "00:02.2", "00:04.2", "00:05.4"],
+      "al-houdaifi": ["00:00.0", "00:01.4", "00:02.1", "00:03.1", "00:03.7"]
+    },
   },
 ];

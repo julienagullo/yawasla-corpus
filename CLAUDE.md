@@ -68,7 +68,7 @@ Hébergement cible : VPS, le build statique est simplement servi par le serveur 
 ## Audio (récitation)
 
 Deux récitateurs : Al-Hussary et Al-Houdaifi (`sources/al-hussary/` et `sources/al-houdaifi/`, un mp3 par sourate complète, attribution visible dans le panneau « Sources & remerciements », voir `conf/license.ts`).
-Découpage en un mp3 par verset dans `public/assets/audio/<recitateur>/<id>-<slug>/` (ex. `al-hussary/001-al-fatiha/01.mp3`), un tableau de sourates découpées par récitateur dans `conf/audio.ts`.
+Découpage en un mp3 par verset dans `public/assets/audio/<recitateur>/<id>-<slug>/` (ex. `al-hussary/001-al-fatiha/01.mp3`) ; un récitateur est considéré disponible pour une sourate dès que ses versets ont des minutages pour lui (`aAudio` dans `conf/audio.ts`, déduit de `Verset.audio`, pas de liste à maintenir).
 Sélecteur de récitateur (`SelecteurRecitateur`) affiché sous le nom de la sourate, une option par récitateur, désactivée si la sourate n'est pas encore découpée pour lui. Choix mémorisé en local (`RecitateurProvider`, même pattern que `ThemeProvider`/`TransliterationProvider`) et partagé avec la barre de navigation (lecture sourate entière) et le bouton par verset.
 **Bismillah : verset `numero: 0` dans `sourate_NNN.ts`** (mots/traduction/audio identiques au verset 1 d'Al-Fatiha, seule sourate où c'est un vrai verset), sauf At-Tawbah/9 qui n'en a pas — pas comptée comme un verset par les savants, donc `NumeroVerset` n'affiche pas de numéro pour elle (voir `src/components/NumeroVerset.tsx`), mais elle est lue/surlignée normalement. Copier aussi `001-al-fatiha/01.mp3` en `00.mp3` dans le dossier audio de la nouvelle sourate (fichier dupliqué plutôt que référencé depuis celui d'Al-Fatiha, pour garder chaque dossier audio autonome).
 Minutage mot-à-mot (surlignage pendant la lecture) : champ `Verset.audio` (`"mm:ss.d"`, un timestamp de départ par mot) dans `src/data/sourates/sourate_NNN.ts`, calé à l'oreille.
@@ -92,10 +92,9 @@ Tout ce qui n'est pas listé dans « Concept » ci-dessus à ne pas développer 
 - [x] Sélecteur de langue (FR / EN / ES)
 - [x] Darkmode
 - [x] Attribution Tanzil + Quranic Arabic Corpus visible sur le site (obligation de licence)
-- [ ] Intégration du contenu
-- [ ] Système de mot favori + page « dico personnel »
 - [x] Sélecteur de récitateur (options désactivées tant qu'une sourate n'est pas découpée pour ce récitateur)
-- [ ] Découper Al-Houdaifi en clips par verset
+- [ ] Système de mot favori + page « dico personnel »
+- [ ] Intégration du contenu audio
 
 <!-- BEGIN:nextjs-agent-rules -->
 

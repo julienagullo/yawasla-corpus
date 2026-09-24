@@ -35,6 +35,7 @@ export default function BarreNavigation() {
   const indexActuel = disponibles.findIndex((s) => s.id === idActuel);
   const sourateActuelle = indexActuel >= 0 ? disponibles[indexActuel] : null;
   const dossierAudio = sourateActuelle ? `${padId(sourateActuelle.id)}-${sourateActuelle.slug}` : null;
+  const versetsActuels = sourateActuelle ? getVersets(sourateActuelle.id) : [];
   const precedente = indexActuel > 0 ? disponibles[indexActuel - 1] : null;
   const suivante = indexActuel >= 0 && indexActuel < disponibles.length - 1 ? disponibles[indexActuel + 1] : null;
 
@@ -89,8 +90,8 @@ export default function BarreNavigation() {
             />
           </span>
         </label>
-        {sourateActuelle && dossierAudio && aAudio(recitateur, dossierAudio) && (
-          <LecteurAudio dossier={dossierAudio} versets={getVersets(sourateActuelle.id)} langue={langue} />
+        {dossierAudio && aAudio(recitateur, versetsActuels) && (
+          <LecteurAudio dossier={dossierAudio} versets={versetsActuels} langue={langue} />
         )}
         {precedente ? (
           <Link

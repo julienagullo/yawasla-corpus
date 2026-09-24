@@ -41,7 +41,7 @@ export default function Mot({
   // Double-clic : récitation depuis ce mot (début du verset si le mot n'a pas de minutage pour ce récitateur).
   function jouerDepuisMot() {
     if (dossier === undefined || verset === undefined || index === undefined || !versets) return;
-    if (!aAudio(recitateur, dossier)) return;
+    if (!aAudio(recitateur, versets)) return;
     const minutage = versets.find((v) => v.numero === verset)?.audio?.[recitateur]?.[index];
     jouer(recitateur, dossier, versets, verset, minutage ? parseMinutage(minutage) : 0);
   }

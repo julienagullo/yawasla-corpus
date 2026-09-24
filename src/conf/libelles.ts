@@ -15,7 +15,6 @@ type Libelles = {
   aPropos: string;
   sourcesTitre: string;
   recitateur: string;
-  bientotDisponible: string;
   codeSource: string;
   licenceCode: string;
 };
@@ -36,7 +35,6 @@ export const LIBELLES: Record<Langue, Libelles> = {
     aPropos: "À propos",
     sourcesTitre: "Sources & remerciements",
     recitateur: "Récitateur",
-    bientotDisponible: "bientôt disponible",
     codeSource: "Code source",
     licenceCode: "Licence MIT",
   },
@@ -55,7 +53,6 @@ export const LIBELLES: Record<Langue, Libelles> = {
     aPropos: "About",
     sourcesTitre: "Sources & credits",
     recitateur: "Reciter",
-    bientotDisponible: "coming soon",
     codeSource: "Source code",
     licenceCode: "MIT license",
   },
@@ -74,7 +71,6 @@ export const LIBELLES: Record<Langue, Libelles> = {
     aPropos: "Acerca de",
     sourcesTitre: "Fuentes y agradecimientos",
     recitateur: "Recitador",
-    bientotDisponible: "próximamente",
     codeSource: "Código fuente",
     licenceCode: "Licencia MIT",
   },
@@ -93,7 +89,6 @@ export const LIBELLES: Record<Langue, Libelles> = {
     aPropos: "حول الموقع",
     sourcesTitre: "المصادر والشكر",
     recitateur: "القارئ",
-    bientotDisponible: "قريبًا",
     codeSource: "الكود المصدري",
     licenceCode: "رخصة MIT",
   },
