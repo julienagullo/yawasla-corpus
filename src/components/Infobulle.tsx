@@ -215,6 +215,16 @@ export default function Infobulle({
             )}
             {/* En arabe le mot est déjà dans sa langue : pas de traduction, seule l'analyse grammaticale a du sens. */}
             {langue !== "ar" && <span className="d-block fw-semibold">{motActif.traduction[langue]}</span>}
+            <span className="mot-infobulle__grammaire d-block small">
+              {motActif.racine ? (
+                <>
+                  <bdi lang="ar">{motActif.racine.arabe}</bdi>
+                  {afficherTransliteration && <span className="fst-italic"> ({motActif.racine.transliteration})</span>}
+                </>
+              ) : (
+                "—"
+              )}
+            </span>
             <span
               className={`d-block ${langue === "ar" ? "fw-semibold" : "mot-infobulle__grammaire small mt-1"}`}
             >

@@ -14,6 +14,7 @@ export const versets: Verset[] = [
           es: "preposición « bi » + nombre común (m.), genitivo",
           ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
+        racine: { arabe: "س م و", transliteration: "s-m-w" },
       },
       {
         texte: "اللَّهِ",
@@ -26,6 +27,7 @@ export const versets: Verset[] = [
           es: "nombre propio, genitivo",
           ar: "اسم علم، مجرور",
         },
+        racine: { arabe: "ء ل ه", transliteration: "ʾ-l-h" },
       },
       {
         texte: "الرَّحْمَـٰنِ",
@@ -37,6 +39,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "ر ح م", transliteration: "r-h-m" },
       },
       {
         texte: "الرَّحِيمِ",
@@ -48,6 +51,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "ر ح م", transliteration: "r-h-m" },
       },
     ],
     traduction: {
@@ -73,6 +77,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) def., nominativo",
           ar: "اسم (مذكر) معرفة، مرفوع",
         },
+        racine: { arabe: "ح م د", transliteration: "h-m-d" },
       },
       {
         texte: "لِلَّهِ",
@@ -84,6 +89,7 @@ export const versets: Verset[] = [
           es: "preposición « li » + nombre propio, genitivo",
           ar: "حرف جر «لِ» + اسم علم، مجرور",
         },
+        racine: { arabe: "ء ل ه", transliteration: "ʾ-l-h" },
       },
       {
         texte: "رَبِّ",
@@ -95,6 +101,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.), genitivo",
           ar: "اسم (مذكر)، مجرور",
         },
+        racine: { arabe: "ر ب ب", transliteration: "r-b-b" },
       },
       {
         texte: "الْعَالَمِينَ",
@@ -106,6 +113,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) plural def., genitivo",
           ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ع ل م", transliteration: "ʿ-l-m" },
       },
     ],
     traduction: {
@@ -131,6 +139,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "ر ح م", transliteration: "r-h-m" },
       },
       {
         texte: "الرَّحِيمِ",
@@ -142,6 +151,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "ر ح م", transliteration: "r-h-m" },
       },
     ],
     traduction: {
@@ -167,6 +177,7 @@ export const versets: Verset[] = [
           es: "participio activo (m.), genitivo",
           ar: "اسم فاعل (مذكر)، مجرور",
         },
+        racine: { arabe: "م ل ك", transliteration: "m-l-k" },
       },
       {
         texte: "يَوْمِ",
@@ -178,6 +189,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.), genitivo",
           ar: "اسم (مذكر)، مجرور",
         },
+        racine: { arabe: "ي و م", transliteration: "y-w-m" },
       },
       {
         texte: "الدِّينِ",
@@ -189,6 +201,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) def., genitivo",
           ar: "اسم (مذكر) معرفة، مجرور",
         },
+        racine: { arabe: "د ي ن", transliteration: "d-y-n" },
       },
     ],
     traduction: {
@@ -225,6 +238,7 @@ export const versets: Verset[] = [
           es: "verbo (v.) imperfectivo, 1ª pers. plural",
           ar: "فعل مضارع، للمتكلمين (جمع)",
         },
+        racine: { arabe: "ع ب د", transliteration: "ʿ-b-d" },
       },
       {
         texte: "وَإِيَّاكَ",
@@ -242,11 +256,12 @@ export const versets: Verset[] = [
         transliteration: "Nasta'in",
         traduction: { fr: "nous implorons secours", en: "turn for help", es: "pedimos ayuda" },
         grammaire: {
-          fr: "verbe (v.) inaccompli, 1re pers. plur.",
-          en: "verb (v.) imperfect, 1st pers. plural",
-          es: "verbo (v.) imperfectivo, 1ª pers. plural",
-          ar: "فعل مضارع، للمتكلمين (جمع)",
+          fr: "verbe (v.) forme X inaccompli, 1re pers. plur.",
+          en: "verb (v.) form X imperfect, 1st pers. plural",
+          es: "verbo (v.) forma X imperfectivo, 1ª pers. plural",
+          ar: "فعل مضارع «استفعل»، للمتكلمين (جمع)",
         },
+        racine: { arabe: "ع و ن", transliteration: "ʿ-w-n" },
       },
     ],
     traduction: {
@@ -272,6 +287,7 @@ export const versets: Verset[] = [
           es: "verbo (v.) imperativo, 2ª pers. m. sing. + sufijo pronominal, 1ª pers. plural",
           ar: "فعل أمر، للمخاطب المذكر المفرد + ضمير متصل، للمتكلمين (جمع)",
         },
+        racine: { arabe: "ه د ي", transliteration: "h-d-y" },
       },
       {
         texte: "الصِّرَاطَ",
@@ -283,6 +299,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) def., acusativo",
           ar: "اسم (مذكر) معرفة، منصوب",
         },
+        racine: { arabe: "ص ر ط", transliteration: "s-r-t" },
       },
       {
         texte: "الْمُسْتَقِيمَ",
@@ -294,6 +311,7 @@ export const versets: Verset[] = [
           es: "participio activo (m.) def., acusativo",
           ar: "اسم فاعل (مذكر) معرفة، منصوب",
         },
+        racine: { arabe: "ق و م", transliteration: "q-w-m" },
       },
     ],
     traduction: {
@@ -319,6 +337,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.), acusativo",
           ar: "اسم (مذكر)، منصوب",
         },
+        racine: { arabe: "ص ر ط", transliteration: "s-r-t" },
       },
       {
         texte: "الَّذِينَ",
@@ -336,11 +355,12 @@ export const versets: Verset[] = [
         transliteration: "An'amta",
         traduction: { fr: "Tu as comblés de faveurs", en: "You have blessed", es: "Tú has agraciado" },
         grammaire: {
-          fr: "verbe (v.) accompli, 2e pers. m. sing. + pronom suffixe, 2e pers. m. sing.",
-          en: "verb (v.) perfect, 2nd pers. m. sing. + pronoun suffix, 2nd pers. m. sing.",
-          es: "verbo (v.) perfectivo, 2ª pers. m. sing. + sufijo pronominal, 2ª pers. m. sing.",
-          ar: "فعل ماض، للمخاطب المذكر المفرد + ضمير متصل، للمخاطب المذكر المفرد",
+          fr: "verbe (v.) forme IV accompli, 2e pers. m. sing. + pronom suffixe, 2e pers. m. sing.",
+          en: "verb (v.) form IV perfect, 2nd pers. m. sing. + pronoun suffix, 2nd pers. m. sing.",
+          es: "verbo (v.) forma IV perfectivo, 2ª pers. m. sing. + sufijo pronominal, 2ª pers. m. sing.",
+          ar: "فعل ماض «أفعل»، للمخاطب المذكر المفرد + ضمير متصل، للمخاطب المذكر المفرد",
         },
+        racine: { arabe: "ن ع م", transliteration: "n-ʿ-m" },
       },
       {
         texte: "عَلَيْهِمْ",
@@ -363,6 +383,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.), genitivo",
           ar: "اسم (مذكر)، مجرور",
         },
+        racine: { arabe: "غ ي ر", transliteration: "gh-y-r" },
       },
       {
         texte: "الْمَغْضُوبِ",
@@ -378,6 +399,7 @@ export const versets: Verset[] = [
           es: "participio pasivo (m.) def., genitivo",
           ar: "اسم مفعول (مذكر) معرفة، مجرور",
         },
+        racine: { arabe: "غ ض ب", transliteration: "gh-d-b" },
       },
       {
         texte: "عَلَيْهِمْ",
@@ -411,6 +433,7 @@ export const versets: Verset[] = [
           es: "participio activo (m.) plural def., genitivo",
           ar: "اسم فاعل (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ض ل ل", transliteration: "d-l-l" },
       },
     ],
     traduction: {

@@ -10,6 +10,8 @@ export type Mot = {
   transliteration: string;
   traduction: Record<LangueTraduction, string>;
   grammaire: Record<Langue, string>;
+  // Généré par scripts/grammaire.mjs ; absent pour les mots sans racine (particules, pronoms...).
+  racine?: { arabe: string; transliteration: string };
   couleur?: string;
 };
 

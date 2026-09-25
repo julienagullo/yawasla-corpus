@@ -1,4 +1,4 @@
-// Génère le champ `grammaire` (fr/en/es/ar) de chaque mot d'une sourate à partir du Quranic Arabic Corpus.
+// Génère les champs `grammaire` (fr/en/es/ar) et `racine` de chaque mot d'une sourate à partir du Quranic Arabic Corpus.
 // Usage : npm run grammaire -- 114 [113 ...]
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -35,7 +35,13 @@ const ASPECTS = {
   IMPF: { fr: "inaccompli", en: "imperfect", es: "imperfectivo", ar: "مضارع" },
   IMPV: { fr: "impératif", en: "imperative", es: "imperativo", ar: "أمر" },
 };
-const KANA = { fr: "(famille de « kāna »)", en: "(kāna family)", es: "(familia de « kāna »)", ar: "ناقص" };
+// Forme dérivée « (II) »... « (XII) » ; forme I implicite dans le corpus, donc jamais affichée. En arabe : le schème.
+const SCHEMES_AR = {
+  II: "فعّل", III: "فاعل", IV: "أفعل", V: "تفعّل", VI: "تفاعل", VII: "انفعل",
+  VIII: "افتعل", IX: "افعلّ", X: "استفعل", XI: "افعالّ", XII: "افعوعل",
+};
+const FORME = { fr: "forme", en: "form", es: "forma" };
+const KANA ={ fr: "(famille de « kāna »)", en: "(kāna family)", es: "(familia de « kāna »)", ar: "ناقص" };
 const PASSIF = { fr: "passif", en: "passive", es: "pasivo", ar: "مبني للمجهول" };
 const MODES = {
   "MOOD:JUS": { fr: "apocopé (jussif)", en: "jussive", es: "yusivo", ar: "مجزوم" },
@@ -62,6 +68,22 @@ const PERSONNES_AR = {
   "3MS": "للغائب المذكر المفرد", "3FS": "للغائبة المؤنثة المفردة", "3MD": "للغائبَين (مثنى مذكر)",
   "3FD": "للغائبتين (مثنى مؤنث)", "3MP": "للغائبين (جمع مذكر)", "3FP": "للغائبات (جمع مؤنث)",
 };
+
+// Lettre de racine (Buckwalter du corpus, où « A » note la hamza) → [lettre arabe, translittération simple comme celle des mots].
+const LETTRES_RACINE = {
+  A: ["ء", "ʾ"], b: ["ب", "b"], t: ["ت", "t"], v: ["ث", "th"], j: ["ج", "j"], H: ["ح", "h"], x: ["خ", "kh"],
+  d: ["د", "d"], "*": ["ذ", "dh"], r: ["ر", "r"], z: ["ز", "z"], s: ["س", "s"], $: ["ش", "sh"],
+  S: ["ص", "s"], D: ["ض", "d"], T: ["ط", "t"], Z: ["ظ", "z"], E: ["ع", "ʿ"], g: ["غ", "gh"],
+  f: ["ف", "f"], q: ["ق", "q"], k: ["ك", "k"], l: ["ل", "l"], m: ["م", "m"], n: ["ن", "n"],
+  h: ["ه", "h"], w: ["و", "w"], y: ["ي", "y"],
+};
+
+function racine(segments) {
+  const code = segments.flat().find((x) => x.startsWith("ROOT:"))?.replace("ROOT:", "");
+  if (!code) return null;
+  const lettres = [...code].map((c) => LETTRES_RACINE[c] ?? erreur(`lettre de racine inconnue : ${c} (${code})`));
+  return { arabe: lettres.map((l) => l[0]).join(" "), transliteration: lettres.map((l) => l[1]).join("-") };
+}
 
 // Virgule arabe « ، » dans les libellés arabes.
 const virgule = (langue) => (langue === "ar" ? "، " : ", ");
@@ -103,9 +125,12 @@ function segment(traits, langue, contexte) {
     const aspect = ASPECTS[["PERF", "IMPF", "IMPV"].find((a) => f.has(a))][langue];
     const mode = reste.find((x) => x.startsWith("MOOD:"));
     const ar = langue === "ar";
+    const numForme = reste.find((x) => /^\([IVX]+\)$/.test(x))?.slice(1, -1);
+    if (numForme && !SCHEMES_AR[numForme]) erreur(`forme inconnue : ${numForme}`);
+    const forme = numForme && (ar ? `«${SCHEMES_AR[numForme]}»` : `${FORME[langue]} ${numForme}`);
     const morceaux = ar
-      ? [VERBE.ar, aspect, f.has("SP:kaAn") && KANA.ar, f.has("PASS") && PASSIF.ar, mode && MODES[mode].ar]
-      : [VERBE[langue], f.has("PASS") && PASSIF[langue], aspect, mode && MODES[mode][langue], f.has("SP:kaAn") && KANA[langue]];
+      ? [VERBE.ar, aspect, forme, f.has("SP:kaAn") && KANA.ar, f.has("PASS") && PASSIF.ar, mode && MODES[mode].ar]
+      : [VERBE[langue], forme, f.has("PASS") && PASSIF[langue], aspect, mode && MODES[mode][langue], f.has("SP:kaAn") && KANA[langue]];
     return `${morceaux.filter(Boolean).join(" ")}${virgule(langue)}${personne(perso, langue)}`;
   }
 
@@ -150,7 +175,7 @@ for (const arg of process.argv.slice(2)) {
   const verifierFinVerset = () => {
     if (numero !== null && corpus.has(cleMot(numero, index + 1))) erreur(`${fichier} : verset ${numero}, mots manquants par rapport au corpus`);
   };
-  const resultat = source.replace(/numero: (\d+),|^( *)grammaire: \{[\s\S]*?\},/gm, (bloc, num, indent) => {
+  const resultat = source.replace(/numero: (\d+),|^( *)grammaire: \{[\s\S]*?\},(?:\n *racine: \{.*\},)?/gm, (bloc, num, indent) => {
     if (num !== undefined) {
       verifierFinVerset();
       numero = Number(num);
@@ -162,7 +187,9 @@ for (const arg of process.argv.slice(2)) {
     const cle = cleMot(numero, index);
     const segments = corpus.get(cle) ?? erreur(`${fichier} : mot absent du corpus (${cle})`);
     const lignes = LANGUES.map((l) => `${indent}  ${l}: ${JSON.stringify(analyser(segments, l))},`);
-    return `${indent}grammaire: {\n${lignes.join("\n")}\n${indent}},`;
+    const r = racine(segments);
+    const ligneRacine = r ? `\n${indent}racine: { arabe: ${JSON.stringify(r.arabe)}, transliteration: ${JSON.stringify(r.transliteration)} },` : "";
+    return `${indent}grammaire: {\n${lignes.join("\n")}\n${indent}},${ligneRacine}`;
   });
   verifierFinVerset();
   writeFileSync(fichier, resultat);

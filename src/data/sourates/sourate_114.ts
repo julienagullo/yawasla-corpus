@@ -14,6 +14,7 @@ export const versets: Verset[] = [
           es: "preposición « bi » + nombre común (m.), genitivo",
           ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
+        racine: { arabe: "س م و", transliteration: "s-m-w" },
       },
       {
         texte: "اللَّهِ",
@@ -26,6 +27,7 @@ export const versets: Verset[] = [
           es: "nombre propio, genitivo",
           ar: "اسم علم، مجرور",
         },
+        racine: { arabe: "ء ل ه", transliteration: "ʾ-l-h" },
       },
       {
         texte: "الرَّحْمَـٰنِ",
@@ -37,6 +39,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "ر ح م", transliteration: "r-h-m" },
       },
       {
         texte: "الرَّحِيمِ",
@@ -48,6 +51,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "ر ح م", transliteration: "r-h-m" },
       },
     ],
     traduction: {
@@ -73,6 +77,7 @@ export const versets: Verset[] = [
           es: "verbo (v.) imperativo, 2ª pers. m. sing.",
           ar: "فعل أمر، للمخاطب المذكر المفرد",
         },
+        racine: { arabe: "ق و ل", transliteration: "q-w-l" },
       },
       {
         texte: "أَعُوذُ",
@@ -84,6 +89,7 @@ export const versets: Verset[] = [
           es: "verbo (v.) imperfectivo, 1ª pers. sing.",
           ar: "فعل مضارع، للمتكلم المفرد",
         },
+        racine: { arabe: "ع و ذ", transliteration: "ʿ-w-dh" },
       },
       {
         texte: "بِرَبِّ",
@@ -95,6 +101,7 @@ export const versets: Verset[] = [
           es: "preposición « bi » + nombre común (m.), genitivo",
           ar: "حرف جر «بِ» + اسم (مذكر)، مجرور",
         },
+        racine: { arabe: "ر ب ب", transliteration: "r-b-b" },
       },
       {
         texte: "النَّاسِ",
@@ -106,6 +113,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) plural def., genitivo",
           ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ن و س", transliteration: "n-w-s" },
       },
     ],
     traduction: {
@@ -131,6 +139,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
+        racine: { arabe: "م ل ك", transliteration: "m-l-k" },
       },
       {
         texte: "النَّاسِ",
@@ -142,6 +151,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) plural def., genitivo",
           ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ن و س", transliteration: "n-w-s" },
       },
     ],
     traduction: {
@@ -167,6 +177,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
+        racine: { arabe: "ء ل ه", transliteration: "ʾ-l-h" },
       },
       {
         texte: "النَّاسِ",
@@ -178,6 +189,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) plural def., genitivo",
           ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ن و س", transliteration: "n-w-s" },
       },
     ],
     traduction: {
@@ -214,6 +226,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) sing., genitivo",
           ar: "اسم (مذكر) مفرد، مجرور",
         },
+        racine: { arabe: "ش ر ر", transliteration: "sh-r-r" },
       },
       {
         // EN officiel trop paraphrasé pour ce mot (fusionne avec le v.5) : gloss plus fidèle.
@@ -226,6 +239,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) sing. def., genitivo",
           ar: "اسم (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "و س و س", transliteration: "w-s-w-s" },
       },
       {
         texte: "الْخَنَّاسِ",
@@ -237,6 +251,7 @@ export const versets: Verset[] = [
           es: "adjetivo (m.) sing. def., genitivo",
           ar: "صفة (مذكر) مفرد معرفة، مجرور",
         },
+        racine: { arabe: "خ ن س", transliteration: "kh-n-s" },
       },
     ],
     traduction: {
@@ -273,6 +288,7 @@ export const versets: Verset[] = [
           es: "verbo (v.) imperfectivo, 3ª pers. m. sing.",
           ar: "فعل مضارع، للغائب المذكر المفرد",
         },
+        racine: { arabe: "و س و س", transliteration: "w-s-w-s" },
       },
       {
         texte: "فِي",
@@ -295,6 +311,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) plural, genitivo",
           ar: "اسم (مذكر) جمع، مجرور",
         },
+        racine: { arabe: "ص د ر", transliteration: "s-d-r" },
       },
       {
         texte: "النَّاسِ",
@@ -306,6 +323,7 @@ export const versets: Verset[] = [
           es: "nombre común (m.) plural def., genitivo",
           ar: "اسم (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ن و س", transliteration: "n-w-s" },
       },
     ],
     traduction: {
@@ -342,6 +360,7 @@ export const versets: Verset[] = [
           es: "nombre común (f.) def., genitivo",
           ar: "اسم (مؤنث) معرفة، مجرور",
         },
+        racine: { arabe: "ج ن ن", transliteration: "j-n-n" },
       },
       {
         texte: "وَالنَّاسِ",
@@ -353,6 +372,7 @@ export const versets: Verset[] = [
           es: "conjunción « wa » + nombre común (m.) plural def., genitivo",
           ar: "حرف عطف «وَ» + اسم (مذكر) جمع معرفة، مجرور",
         },
+        racine: { arabe: "ن و س", transliteration: "n-w-s" },
       },
     ],
     traduction: {
