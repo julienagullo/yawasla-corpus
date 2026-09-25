@@ -21,9 +21,6 @@ type LectureAudioContexte = {
   signalerInfobulleVisible: (visible: boolean) => void;
 };
 
-// Fondu d'entrée de chaque verset (secondes) : adoucit le bruit de fond qui démarre d'un coup en tête de clip.
-const DUREE_FONDU = 0.5;
-
 const LectureAudioContext = createContext<LectureAudioContexte | null>(null);
 
 export function LectureAudioProvider({ children }: { children: ReactNode }) {
@@ -35,10 +32,6 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
   const motActifRef = useRef<MotActif | null>(null);
   const infobulleVisibleRef = useRef(false);
   const suiviRef = useRef<number | null>(null);
-  const departFonduRef = useRef(0);
-  // Verset suivant téléchargé d'avance en mémoire (blob) pour enchaîner sans attendre le réseau.
-  const prechargeRef = useRef<{ url: string; blob: string | null } | null>(null);
-  const blobEnCoursRef = useRef<string | null>(null);
 
   const signalerInfobulleVisible = useCallback((visible: boolean) => {
     infobulleVisibleRef.current = visible;
@@ -56,56 +49,12 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
     const verset = versetsRef.current[index];
     if (!audio || !r || !d || !verset) return;
     versetIndexRef.current = index;
-    const url = urlAudioVerset(r, d, verset.numero);
-    const precharge = prechargeRef.current;
-    const ancienBlob = blobEnCoursRef.current;
-    if (precharge?.url === url && precharge.blob) {
-      audio.src = precharge.blob;
-      blobEnCoursRef.current = precharge.blob;
-      prechargeRef.current = null;
-    } else {
-      audio.src = url;
-      blobEnCoursRef.current = null;
-    }
-    if (ancienBlob) URL.revokeObjectURL(ancienBlob);
-    audio.volume = 0;
-    departFonduRef.current = debut;
+    audio.src = urlAudioVerset(r, d, verset.numero);
     if (debut > 0) {
       audio.addEventListener("loadedmetadata", () => (audio.currentTime = debut), { once: true });
     }
     audio.play();
     descendreSiHorsChamp(verset.numero);
-    prechargerSuivant();
-  }
-
-  function prechargerSuivant() {
-    const r = recitateurRef.current;
-    const d = dossierRef.current;
-    const suivant = versetsRef.current[versetIndexRef.current + 1];
-    if (!r || !d || !suivant) {
-      oublierPrecharge();
-      return;
-    }
-    const url = urlAudioVerset(r, d, suivant.numero);
-    if (prechargeRef.current?.url === url) return;
-    oublierPrecharge();
-    const precharge: { url: string; blob: string | null } = { url, blob: null };
-    prechargeRef.current = precharge;
-    fetch(url)
-      .then((reponse) => (reponse.ok ? reponse.blob() : null))
-      .then((blob) => {
-        if (!blob) return;
-        // Précharge devenue obsolète entre-temps (arrêt, autre verset) : on ne garde pas le blob.
-        if (prechargeRef.current !== precharge) return;
-        precharge.blob = URL.createObjectURL(blob);
-      })
-      .catch(() => {});
-  }
-
-  function oublierPrecharge() {
-    const blob = prechargeRef.current?.blob;
-    if (blob) URL.revokeObjectURL(blob);
-    prechargeRef.current = null;
   }
 
   function hauteurBarreNavigation(): number {
@@ -174,9 +123,6 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
       audio.removeAttribute("src");
       audio.load();
     }
-    oublierPrecharge();
-    if (blobEnCoursRef.current) URL.revokeObjectURL(blobEnCoursRef.current);
-    blobEnCoursRef.current = null;
     recitateurRef.current = null;
     dossierRef.current = null;
     versetsRef.current = [];
@@ -201,7 +147,6 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
   function demarrerSuivi() {
     if (suiviRef.current !== null) return;
     const boucle = () => {
-      majFondu();
       majMotActif();
       suiviRef.current = requestAnimationFrame(boucle);
     };
@@ -215,13 +160,6 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => arreterSuivi, []);
-
-  // Volume calé sur la position dans le clip (et non l'horloge) : la pause fige aussi le fondu ; aussi appelé sur `timeupdate`, car l'onglet en arrière-plan n'a plus d'images.
-  function majFondu() {
-    const audio = audioRef.current;
-    if (!audio || audio.volume >= 1) return;
-    audio.volume = Math.min(1, Math.max(0, (audio.currentTime - departFonduRef.current) / DUREE_FONDU));
-  }
 
   function majMotActif() {
     const audio = audioRef.current;
@@ -246,7 +184,7 @@ export function LectureAudioProvider({ children }: { children: ReactNode }) {
     <LectureAudioContext.Provider
       value={{ recitateur, dossier, etat, motActif, jouer, basculerLecture, arreter, signalerInfobulleVisible }}
     >
-      <audio ref={audioRef} onEnded={versetSuivant} onPlaying={demarrerSuivi} onPause={arreterSuivi} onTimeUpdate={majFondu} />
+      <audio ref={audioRef} onEnded={versetSuivant} onPlaying={demarrerSuivi} onPause={arreterSuivi} />
       {children}
     </LectureAudioContext.Provider>
   );
