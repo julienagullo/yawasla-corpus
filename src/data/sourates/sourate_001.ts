@@ -255,7 +255,7 @@ export const versets: Verset[] = [
       es: "Solamente a Ti adoramos y solamente a Ti pedimos ayuda.",
     },
     audio: {
-      "al-hussary": ["00:00.0", "00:01.2", "00:02.2", "00:03.4"],
+      "al-hussary": ["00:00.0", "00:01.55", "00:02.3", "00:03.4"],
       "al-houdaifi": ["00:00.0", "00:01.35", "00:02.3", "00:03.2"]
     },
   },
@@ -419,8 +419,8 @@ export const versets: Verset[] = [
       es: "el camino de aquellos a los que Tú has agraciado; no el de aquellos con los que Tú estás disgustado, ni el de los extraviados.",
     },
     audio: {
-      "al-hussary": ["00:00.0", "00:01.1", "00:01.9", "00:02.9", "00:04.0", "00:05.0", "00:06.1", "00:07.1", "00:08.2"],
-      "al-houdaifi": ["00:00.0", "00:01.1", "00:02.1", "00:02.9", "00:04.0", "00:04.9", "00:06.0", "00:07.0", "00:07.9"]
+      "al-hussary": ["00:00.0", "00:01.2", "00:02.1", "00:03.2", "00:04.0", "00:05.0", "00:06.1", "00:07.1", "00:08.2"],
+      "al-houdaifi": ["00:00.0", "00:01.1", "00:02.1", "00:03.1", "00:04.0", "00:04.9", "00:06.0", "00:07.0", "00:07.9"]
     },
   },
 ];
